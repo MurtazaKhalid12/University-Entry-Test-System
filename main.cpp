@@ -4,6 +4,6 @@ using namespace std;
 
 int main ()
 {
-    cout<<"The coding begins brothers and sisters and.... lets just leave it at that";
+    cout<<"Welcome to ITU Exam System in C++";
     return 0;
 }
