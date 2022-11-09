@@ -4,21 +4,33 @@ using namespace std;
 void studentFunction(int dummy)
 {
     int dummyvalue=1;
-    cout<<"\n\n\n\t\t\t\t\tLOGIN FUNCTION GOES HERE";
+    cout<<"\n\n\n";
+    for (int i = 0; i < 120; ++i)
+    {
+        cout<<"*"; //this is for seperation
+    }
     cout<<"\n\n\n\t\t\t\t\tWelcome Dear Student";
     studentShowOptions(dummyvalue);
 }
 void teacherFunction(int dummy)
 {
     int dummyvalue=1;
-    cout<<"\n\n\n\t\t\t\t\tLOGIN FUNCTION GOES HERE";
+    cout<<"\n\n\n";
+    for (int i = 0; i < 120; ++i)
+    {
+        cout<<"*"; //this is for seperation
+    }
     cout<<"\n\n\n\t\t\t\t\tWelcome Dear Teacher";
     teacherShowOptions(dummyvalue);
 }
 void adminFunction(int dummy)
 {
     int dummyvalue=1;
-    cout<<"\n\n\n\t\t\t\t\tLOGIN FUNCTION GOES HERE";
+    cout<<"\n\n\n";
+    for (int i = 0; i < 120; ++i)
+    {
+        cout<<"*"; //this is for seperation
+    }
     cout<<"\n\n\n\t\t\t\t\tWelcome Dear Admin";
     adminShowOptions(dummyvalue);
 
