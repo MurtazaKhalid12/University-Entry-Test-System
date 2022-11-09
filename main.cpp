@@ -65,12 +65,5 @@ void optionSelect(int dummy)
 }
 void loopProgram(int dummy)
 {
-    cout<<"\n\n\n\t\t\t\t\tEnter 1 to loop the program and 0 to end it\n";
-    cout<<"\t\t\t\t\tYour input here: ";
-    int loop;
-    cin>>loop;
-    if (loop == 1)
-        cout<<main();
-    else
-        cout<<"\n\n\n\t\t\t\t\tProgram terminated. Thanks for visiting.\n";
+    cout<<main();
 }

@@ -33,7 +33,7 @@ void studentShowOptions(int dummy)
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
     cout<<"\n\t\t\t\t\t2)Individual report using STRUCTS";
     cout<<"\n\t\t\t\t\t3)Checking Admission Status\n\t\t\t\t\t4)View Merit Lists";
-    cout<<"\n\t\t\t\t\t5)Terminate Program\n\t\t\t\t\tYour input here: ";
+    cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
     studentOptionSelect(dummyvalue);
 }
 
@@ -76,7 +76,7 @@ void teacherShowOptions (int dummy)
     cout<<"\n\t\t\t\t\t2)EDIT Question statement";
     cout<<"\n\t\t\t\t\t3)EDIT MCQs\n\t\t\t\t\t4)GENERATE Merit Lists";
     cout<<"\n\t\t\t\t\t5)MANIPULATE student marks";
-    cout<<"\n\t\t\t\t\t6)To terminate program\n\t\t\t\t\tYour input here: ";
+    cout<<"\n\t\t\t\t\t6)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
     teacherOptionSelect(dummyvalue);
 }
 
@@ -124,7 +124,7 @@ void adminShowOptions(int dummy)
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Add Student";
     cout<<"\n\t\t\t\t\t2)Add Teacher";
     cout<<"\n\t\t\t\t\t3)Add Admin\n\t\t\t\t\t4)Remove Student/Teacher/Admin";
-    cout<<"\n\t\t\t\t\t5)Terminate program";
+    cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION";
     cout<<"\n\t\t\t\t\tYour input here: ";
     adminOptionSelect(dummyvalue);
 }
