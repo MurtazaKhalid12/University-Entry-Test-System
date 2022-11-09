@@ -1,29 +1,30 @@
 void studentFunction(int dummy);
 void teacherFunction(int dummy);
 void adminFunction(int dummy);
-
-
 //now smaller, insignificant functions
 
-
 //STUDENT FUNCTIONS:
-
-
-int studentLogin(int dummy);
+void studentLogin(int dummy);
 void studentLoginLoop (int dummy);
-void examFunction(dummy);
-void resultCheckFunction(dummy);
-void admissionStatusFunction(dummy);
-void meritListFunction(dummy);
-
-
+void studentOptionSelect(int dummy);
+void examFunction(int dummy);
+void resultCheckFunction(int dummy);
+void admissionStatusFunction(int dummy);
+void meritListFunction(int dummy);
 //TEACHER FUNCTIONS:
-
-
-int teacherLogin(int dummy);
+void teacherLogin(int dummy);
 void teacherLoginLoop (int dummy);
+void teacherOptionSelect(int dummy);
+void checkEntryTest(int dummy);
+void editQuestion(int dummy);
+void editMCQs(int dummy);
+void generateMeritList(int dummy);
+void manipulateMarks(int dummy);
 //ADMIN FUNCTIONS:
-
-
-int adminLogin(int dummy);
+void adminLogin(int dummy);
 void adminLoginLoop (int dummy);
+void adminOptionSelect(int dummy);
+void addStudent(int dummy);
+void addTeacher(int dummy);
+void addAdmin(int dummy);
+void removeRole(int dummy);
