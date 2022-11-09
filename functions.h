@@ -6,6 +6,7 @@ void adminFunction(int dummy);
 //STUDENT FUNCTIONS:
 void studentLogin(int dummy);
 void studentLoginLoop (int dummy);
+void studentShowOptions(int dummy);
 void studentOptionSelect(int dummy);
 void examFunction(int dummy);
 void resultCheckFunction(int dummy);
@@ -14,6 +15,7 @@ void meritListFunction(int dummy);
 //TEACHER FUNCTIONS:
 void teacherLogin(int dummy);
 void teacherLoginLoop (int dummy);
+void teacherShowOptions(int dummy);
 void teacherOptionSelect(int dummy);
 void checkEntryTest(int dummy);
 void editQuestion(int dummy);
@@ -23,6 +25,7 @@ void manipulateMarks(int dummy);
 //ADMIN FUNCTIONS:
 void adminLogin(int dummy);
 void adminLoginLoop (int dummy);
+void adminShowOptions(int dummy);
 void adminOptionSelect(int dummy);
 void addStudent(int dummy);
 void addTeacher(int dummy);
