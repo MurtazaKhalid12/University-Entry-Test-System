@@ -1,34 +1,48 @@
 #include <iostream>
 #include "functions.h"
 #include <string>
-#include <iomanip>  //this is for setW() for centering text
+void loopProgram (int dummy);
 using namespace std;
 
 int main ()
 {
     int user; //this for us to specify user
     int dummy=1; //this is for us to give to function
-    cout<<setw(60)<<"Welcome to ITU entry test system in C++\n";
-    cout<<"By Murtaza Khalid, Fatima Waseem, Ariba Mumtaz, Huzaifa Khan & Atif Ashraf\n";
-    cout<<"\aPlease ENTER:\n1 for Student\n2 for Teacher\n3 for Admin\nYour input here: ";
+    cout<<"\t\t\t\t\tWelcome to ITU entry test system in C++\n";
+    cout<<"\t\t\tBy Murtaza Khalid, Fatima Waseem, Ariba Mumtaz, Huzaifa Khan & Atif Ashraf\n";
+    cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1 for Student\n\t\t\t\t\t2 for Teacher\n\t\t\t\t\t3 for Admin\n\t\t\t\t\tYour input here: ";
     cin>>user;
     switch (user) {
         case 1:
-            cout<<setw(60)<<"\n\nYou are a student, bahahahahaha what a loser";
+            cout<<"\n\n\t\t\t\t\tYou are a student, bahahahahaha what a loser";
             studentFunction(dummy);
+            loopProgram(dummy);
             break;
         case 2:
-            cout<<setw(60)<<"\n\nYou are a teacher";
+            cout<<"\n\n\t\t\t\t\tYou are a teacher";
             teacherFunction(dummy);
+            loopProgram(dummy);
             break;
         case 3:
-            cout<<setw(60)<<"\n\nYou are an admin";
+            cout<<"\n\n\t\t\t\t\tYou are an admin";
             adminFunction(dummy);
+            loopProgram(dummy);
             break;
         default:
-            cout<<setw(60)<<"Invalid input";
-            cout<<main();
+            cout<<"\t\t\t\t\tInvalid input";
+            loopProgram(dummy);
     }
 
     return 0;
+}
+void loopProgram(int dummy)
+{
+    cout<<"\n\n\n\t\t\t\t\tEnter 1 to loop the program and 0 to end it\n";
+    cout<<"\t\t\t\t\tYour input here: ";
+    int loop;
+    cin>>loop;
+    if (loop == 1)
+        cout<<main();
+    else
+        cout<<"\n\n\n\t\t\t\t\tProgram terminated. Thanks for visiting.\n";
 }
