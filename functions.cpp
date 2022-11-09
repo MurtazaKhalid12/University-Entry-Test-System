@@ -9,7 +9,7 @@ void studentFunction(int dummy)
     {
         cout<<"*"; //this is for seperation
     }
-    cout<<"\n\n\n\t\t\t\t\tWelcome Dear Student";
+    cout<<"\n\n\n\t\t\t\t\tWelcome Student";
     studentShowOptions(dummyvalue);
 }
 void teacherFunction(int dummy)
@@ -20,7 +20,7 @@ void teacherFunction(int dummy)
     {
         cout<<"*"; //this is for seperation
     }
-    cout<<"\n\n\n\t\t\t\t\tWelcome Dear Teacher";
+    cout<<"\n\n\n\t\t\t\t\tWelcome Teacher";
     teacherShowOptions(dummyvalue);
 }
 void adminFunction(int dummy)
@@ -31,7 +31,7 @@ void adminFunction(int dummy)
     {
         cout<<"*"; //this is for seperation
     }
-    cout<<"\n\n\n\t\t\t\t\tWelcome Dear Admin";
+    cout<<"\n\n\n\t\t\t\t\tWelcome Admin";
     adminShowOptions(dummyvalue);
 
 }
