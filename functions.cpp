@@ -1,172 +1,185 @@
 #include<iostream>
 #include "functions.h"
 using namespace std;
-void studentFunction(int dummy)
+void studentFunction()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n";
     for (int i = 0; i < 120; ++i)
     {
         cout<<"*"; //this is for seperation
     }
     cout<<"\n\n\n\t\t\t\t\tWelcome Student";
-    studentShowOptions(dummyvalue);
+    studentShowOptions();
 }
-void teacherFunction(int dummy)
+void teacherFunction()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n";
     for (int i = 0; i < 120; ++i)
     {
         cout<<"*"; //this is for seperation
     }
     cout<<"\n\n\n\t\t\t\t\tWelcome Teacher";
-    teacherShowOptions(dummyvalue);
+    teacherShowOptions();
 }
-void adminFunction(int dummy)
+void adminFunction()
 {
-    int dummyvalue=1;
+
     cout<<"\n\n\n";
     for (int i = 0; i < 120; ++i)
     {
         cout<<"*"; //this is for seperation
     }
     cout<<"\n\n\n\t\t\t\t\tWelcome Admin";
-    adminShowOptions(dummyvalue);
+    adminShowOptions();
 
 }
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //now we define the Option Select Functions
-void studentShowOptions(int dummy)
+void studentShowOptions()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
     cout<<"\n\t\t\t\t\t2)Individual report using STRUCTS";
     cout<<"\n\t\t\t\t\t3)Checking Admission Status\n\t\t\t\t\t4)View Merit Lists";
     cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
-    studentOptionSelect(dummyvalue);
+    studentOptionSelect();
 }
 
-void studentOptionSelect(int dummy) //student selects options.
+void studentOptionSelect() //student selects options.
 {
-    int dummyvalue=1;
     int option; cin>>option;
+    cin.clear();
+    cin.ignore();
     switch (option) {
         case 1:
             cout<<"\n\n\t\t\t\t\tGet ready to suffer\n";
-            examFunction(dummyvalue);
+            examFunction();
+            studentShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tYou are already dead\n";
-            resultCheckFunction(dummyvalue);
+            resultCheckFunction();
+            studentShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tThe only admission you get is to a mental institute\n";
-            admissionStatusFunction(dummyvalue);
+            admissionStatusFunction();
+            studentShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tMerit list function, the joke here is your meritXD\n";
-            meritListFunction(dummyvalue);
+            meritListFunction();
+            studentShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
             break;
         default:
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-            studentOptionSelect(dummyvalue);
+            studentOptionSelect();
+            break;
     }
 }
 /////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
-void teacherShowOptions (int dummy)
+void teacherShowOptions ()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Checking admission test";
     cout<<"\n\t\t\t\t\t2)EDIT Question statement";
     cout<<"\n\t\t\t\t\t3)EDIT MCQs\n\t\t\t\t\t4)GENERATE Merit Lists";
     cout<<"\n\t\t\t\t\t5)MANIPULATE student marks";
     cout<<"\n\t\t\t\t\t6)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
-    teacherOptionSelect(dummyvalue);
+    teacherOptionSelect();
 }
 
-void teacherOptionSelect(int dummy)   //teacher options select
+void teacherOptionSelect()   //teacher options select
 {
-    int dummyvalue=1;
     int option; cin>>option;
+    cin.clear();
+    cin.ignore();
     switch (option) {
         case 1:
             cout<<"\n\n\t\t\t\t\tHave a look at the monster you created\n";
-            checkEntryTest(dummyvalue);
+            checkEntryTest();
+            teacherShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tEdit the question statement here\n";
-            editQuestion(dummyvalue);
+            editQuestion();
+            teacherShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tEdit MCQs and correct option SIRRRRRRR\n";
-            editMCQs(dummyvalue);
+            editMCQs();
+            teacherShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tGenerate merit list from marks sheet\n";
-            generateMeritList(dummyvalue);
+            generateMeritList();
+            teacherShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tYes, manipulate their marks, you :D\n";
-            manipulateMarks(dummyvalue);
+            manipulateMarks();
+            teacherShowOptions();
             break;
         case 6:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
             break;
         default:
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-            teacherOptionSelect(dummyvalue);
+            teacherOptionSelect();
+            break;
     }
 }
 
 //////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-void adminShowOptions(int dummy)
+void adminShowOptions()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Add Student";
     cout<<"\n\t\t\t\t\t2)Add Teacher";
     cout<<"\n\t\t\t\t\t3)Add Admin\n\t\t\t\t\t4)Remove Student/Teacher/Admin";
     cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION";
     cout<<"\n\t\t\t\t\tYour input here: ";
-    adminOptionSelect(dummyvalue);
+    adminOptionSelect();
 }
-void adminOptionSelect(int dummy)
+void adminOptionSelect()
 {
-    int dummyvalue=1;
     int option; cin>>option;
+    cin.clear();
+    cin.ignore();
     switch (option) {
         case 1:
             cout<<"\n\n\t\t\t\t\tAdd any student into any program\n";
-            addStudent(dummyvalue);
+            addStudent();
+            adminShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tAdd any teacher to any program\n";
-            addTeacher(dummyvalue);
+            addTeacher();
+            adminShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tAdd another admin to this system\n";
-            addAdmin(dummyvalue);
+            addAdmin();
+            adminShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tRemove them from the throne, show your POWERRRRR\n";
-            removeRole(dummyvalue);
+            removeRole();
+            adminShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
             break;
         default:
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-            adminShowOptions(dummyvalue);
+            adminShowOptions();
     }
 }
 
@@ -174,115 +187,85 @@ void adminOptionSelect(int dummy)
 //then we start defining functions for the three modes
 
 //STUDENT FUNCTIONS:
-void studentLogin(int dummy)
+void studentLogin()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
 }
-void studentLoginLoop (int dummy)
+void studentLoginLoop ()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
 }
-void examFunction(int dummy)
+void examFunction()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
+
 }
-void resultCheckFunction(int dummy)
+void resultCheckFunction()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
+
 }
-void admissionStatusFunction(int dummy)
+void admissionStatusFunction()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
 }
-void meritListFunction(int dummy)
+void meritListFunction()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
 }
 //TEACHER FUNCTIONS:
-void teacherLogin(int dummy)
+void teacherLogin()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
+
 }
-void teacherLoginLoop (int dummy)
+void teacherLoginLoop ()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
-void checkEntryTest(int dummy)
+void checkEntryTest()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
-void editQuestion(int dummy)
+void editQuestion()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
-void editMCQs(int dummy)
+void editMCQs()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
-void generateMeritList(int dummy)
+void generateMeritList()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
+
 }
-void manipulateMarks(int dummy)
+void manipulateMarks()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
 //ADMIN FUNCTIONS:
-void adminLogin(int dummy)
+void adminLogin()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
 }
-void adminLoginLoop (int dummy)
+void adminLoginLoop ()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
 }
-void addStudent(int dummy)
+void addStudent()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
 }
-void addTeacher(int dummy)
+void addTeacher()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
 }
-void addAdmin(int dummy)
+void addAdmin()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
 }
-void removeRole(int dummy)
+void removeRole()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
 }
