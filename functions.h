@@ -18,7 +18,7 @@ void teacherLoginLoop ();
 void teacherShowOptions();
 void teacherOptionSelect();
 void checkEntryTest();
-void editQuestion();
+void makeMCQs();
 void editMCQs();
 void generateMeritList();
 void manipulateMarks();

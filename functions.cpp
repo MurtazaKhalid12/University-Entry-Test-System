@@ -115,7 +115,7 @@ void teacherShowOptions ()
 {
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Checking admission test";
-    cout<<"\n\t\t\t\t\t2)EDIT Question statement";
+    cout<<"\n\t\t\t\t\t2)Make MCQs for Paper";
     cout<<"\n\t\t\t\t\t3)EDIT MCQs\n\t\t\t\t\t4)GENERATE Merit Lists";
     cout<<"\n\t\t\t\t\t5)MANIPULATE student marks";
     cout<<"\n\t\t\t\t\t6)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
@@ -136,7 +136,7 @@ void teacherOptionSelect()   //teacher options select
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tEdit the question statement here\n";
-            editQuestion();
+            makeMCQs();
             seperationFunction();
             teacherShowOptions();
             break;
@@ -355,9 +355,30 @@ void checkEntryTest()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
 }
-void editQuestion()
+void makeMCQs()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    int x;
+    cout<<" "<<"WELCOME TO MCQS "<<endl;
+    cout<<"ENTER THE NUMBER OF MCQS :- ";
+    cin>>x;
+    string str;
+    string str1;
+    ofstream xyz;
+    xyz.open("mcqs.txt",ios::app);
+    for(int i = 1;i<=x;i++)
+    {
+        cout<<" MCQS NUMBER "<<i<<":"<<" ";
+        getline(cin,str);
+        getline(cin,str);
+        xyz<<str<<endl;
+        for ( int j = 1; j <= 4; j++)
+        { string alp ="abcd";
+            cout<<"option number :- "<<j<<")";
+            getline(cin,str1);
+            xyz<<alp[j-1]<<")."<<str1<<endl;
+        }
+    }
+    xyz.close();
 }
 void editMCQs()
 {
