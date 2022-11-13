@@ -358,8 +358,8 @@ void checkEntryTest()
 void makeMCQs()
 {
     int x;
-    cout<<" "<<"WELCOME TO MCQS "<<endl;
-    cout<<"ENTER THE NUMBER OF MCQS :- ";
+    cout<<"\n\n\t\t\t\t\t(WELCOME TO MCQS Making System)"<<endl;
+    cout<<"\n\n\t\t\t\t\tENTER THE NUMBER OF MCQS you want to make:- ";
     cin>>x;
     string str;
     string str1;
@@ -367,17 +367,18 @@ void makeMCQs()
     xyz.open("mcqs.txt",ios::app);
     for(int i = 1;i<=x;i++)
     {
-        cout<<" MCQS NUMBER "<<i<<":"<<" ";
+        cout<<"\n\n\t\t\t\t\tMCQS NUMBER "<<i<<":"<<" ";
         getline(cin,str);
         getline(cin,str);
         xyz<<str<<endl;
         for ( int j = 1; j <= 4; j++)
         { string alp ="abcd";
-            cout<<"option number :- "<<j<<")";
+            cout<<"\n\n\t\t\t\t\toption number :- "<<j<<")";
             getline(cin,str1);
             xyz<<alp[j-1]<<")."<<str1<<endl;
         }
     }
+    cout<<"\n\n\t\t\t\t\t(MCQs CREATED)";
     xyz.close();
 }
 void editMCQs()
