@@ -237,29 +237,35 @@ void adminOptionSelect()
 //STUDENT FUNCTIONS:
 void studentLogin()
 {
-    int count;
-    char loginroll[20],loginpass[20],rollnum[20],pass[20];
+        int count;
+        char loginroll[20], loginpass[20], rollnum[20], pass[20];
 
-    cout<<"\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
-    cin>>loginroll;
-    cout<<"\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
-    cin>>loginpass;
+        cout << "\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
+        cin >> loginroll;
+        cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+        cin >> loginpass;
+        ifstream input("loginstudents.txt");
+        while (input >> rollnum >> pass)
+        {
+            if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
+            {
+                count=1;
+            }
+        }
+        if (count==1)
+        {
+            cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
+            studentFunction(2);
 
-    ifstream input("loginstudents.txt"); //to read the date from .txt file which we created to get registration input
-    input>>rollnum>>pass;
+        }
+        else
+        {
+            cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
+            studentLoginLoop();
 
-    if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
-    {
-        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)";
-        studentFunction(2);
-    }
-    else
-    {
-        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)";
-        studentLoginLoop();
-    }
+        }
 
-    input.close();
+        input.close();
 }
 void studentLoginLoop ()
 {
@@ -318,24 +324,30 @@ void meritListFunction()
 //TEACHER FUNCTIONS:
 void teacherLogin()
 {
+    int count;
     char loginname[20],loginpass[20],name[20],pass[20];
-    cout<<"\n\n\t\t\t\t\tIF YOU DONT HAVE AN ACCOUNT YET CONTACT ADMINISTRATION";
+    cout<<"\n\n\t\t\t\t\tIF YOU DONT HAVE AN ACCOUNT YET, CONTACT ADMINISTRATION";
     cout<<"\n\n\t\t\t\t\tENTER YOUR NAME: ";
     cin>>loginname;
     cout<<"\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
     cin>>loginpass;
 
     ifstream input("loginteachers.txt"); //to read the date from .txt file which we created to get registration input
-    input>>name>>pass;
-
-    if(strcmp(loginname,name)==0 && strcmp(loginpass,pass)==0)
+    while (input >> name >> pass)
     {
-        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)";
+        if(strcmp(loginname,name)==0 && strcmp(loginpass,pass)==0)
+        {
+            count=1;
+        }
+    }
+    if (count==1)
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
         teacherFunction(2);
     }
     else
     {
-        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)";
+        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
         teacherLoginLoop();
     }
 
