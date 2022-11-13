@@ -42,25 +42,26 @@ void optionSelect()
     cin.ignore();
     switch (user) {
         case 1:
-            cout<<"\n\n\t\t\t\t\tYou are a student, bahahahahaha what a loser";
+            cout<<"\n\n\t\t\t\t\tYou are a student.\n\n";
             studentFunction();
             loopProgram();
             break;
         case 2:
-            cout<<"\n\n\t\t\t\t\tYou are a teacher";
+            cout<<"\n\n\t\t\t\t\tYou are a teacher\n\n";
             teacherFunction();
             loopProgram();
             break;
         case 3:
-            cout<<"\n\n\t\t\t\t\tYou are an admin";
+            cout<<"\n\n\t\t\t\t\tYou are an admin\n\n";
             adminFunction();
             loopProgram();
             break;
         case 4:
-            cout<<"\n\n\t\t\t\t\tThank you for your time.";
+            cout<<"\n\n\t\t\t\t\tThank you for your time.\n\n";
+            seperationFunction();
             break;
         default:
-            cout<<"\t\t\t\t\tInvalid choice, try again.";
+            cout<<"\t\t\t\t\tInvalid choice, try again.\n\n";
             optionShow();
     }
 

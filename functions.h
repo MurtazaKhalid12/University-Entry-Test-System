@@ -31,3 +31,6 @@ void addStudent();
 void addTeacher();
 void addAdmin();
 void removeRole();
+
+//Structure functions:
+void seperationFunction();

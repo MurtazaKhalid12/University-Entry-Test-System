@@ -3,32 +3,20 @@
 using namespace std;
 void studentFunction()
 {
-    cout<<"\n\n\n";
-    for (int i = 0; i < 120; ++i)
-    {
-        cout<<"*"; //this is for seperation
-    }
+    seperationFunction();
     cout<<"\n\n\n\t\t\t\t\tWelcome Student";
     studentShowOptions();
 }
 void teacherFunction()
 {
-    cout<<"\n\n\n";
-    for (int i = 0; i < 120; ++i)
-    {
-        cout<<"*"; //this is for seperation
-    }
+    seperationFunction();
     cout<<"\n\n\n\t\t\t\t\tWelcome Teacher";
     teacherShowOptions();
 }
 void adminFunction()
 {
 
-    cout<<"\n\n\n";
-    for (int i = 0; i < 120; ++i)
-    {
-        cout<<"*"; //this is for seperation
-    }
+    seperationFunction();
     cout<<"\n\n\n\t\t\t\t\tWelcome Admin";
     adminShowOptions();
 
@@ -55,27 +43,33 @@ void studentOptionSelect() //student selects options.
         case 1:
             cout<<"\n\n\t\t\t\t\tGet ready to suffer\n";
             examFunction();
+            seperationFunction();
             studentShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tYou are already dead\n";
             aggregateFunction();
+            seperationFunction();
             studentShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tThe only admission you get is to a mental institute\n";
             admissionStatusFunction();
+            seperationFunction();
             studentShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tMerit list function, the joke here is your meritXD\n";
             meritListFunction();
+            seperationFunction();
             studentShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
             break;
         default:
+            seperationFunction();
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
             studentOptionSelect();
             break;
@@ -101,35 +95,42 @@ void teacherOptionSelect()   //teacher options select
     cin.ignore();
     switch (option) {
         case 1:
-            cout<<"\n\n\t\t\t\t\tHave a look at the monster you created\n";
+            cout<<"\n\n\t\t\t\t\tTake a look at the entry test.\n";
             checkEntryTest();
+            seperationFunction();
             teacherShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tEdit the question statement here\n";
             editQuestion();
+            seperationFunction();
             teacherShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tEdit MCQs and correct option SIRRRRRRR\n";
             editMCQs();
+            seperationFunction();
             teacherShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tGenerate merit list from marks sheet\n";
             generateMeritList();
+            seperationFunction();
             teacherShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tYes, manipulate their marks, you :D\n";
             manipulateMarks();
+            seperationFunction();
             teacherShowOptions();
             break;
         case 6:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
             break;
         default:
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
+            seperationFunction();
             teacherOptionSelect();
             break;
     }
@@ -157,28 +158,34 @@ void adminOptionSelect()
         case 1:
             cout<<"\n\n\t\t\t\t\tAdd any student into any program\n";
             addStudent();
+            seperationFunction();
             adminShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tAdd any teacher to any program\n";
             addTeacher();
+            seperationFunction();
             adminShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tAdd another admin to this system\n";
             addAdmin();
+            seperationFunction();
             adminShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tRemove them from the throne, show your POWERRRRR\n";
             removeRole();
+            seperationFunction();
             adminShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
             break;
         default:
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
+            seperationFunction();
             adminShowOptions();
     }
 }
@@ -289,3 +296,13 @@ void removeRole()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
 }
+void seperationFunction()
+{
+    cout<<"\n\n";
+    for (int i = 0; i < 120; ++i)
+    {
+        cout<<"X"; //this is for seperation
+    }
+    cout<<"\n\n";
+}
+
