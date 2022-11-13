@@ -415,26 +415,63 @@ void adminLoginLoop ()
 }
 void addStudent()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    string rollnum,pass;
+    ofstream log("loginstudents.txt", ios::app);
+
+    cout<<"\n\n\t\t\t\t\tENTER STUDENT ROLL NUMBER: ";
+    cin>>rollnum;
+    log<<"\n"<<rollnum<<endl;
+
+    cout<<"\n\n\t\t\t\t\tENTER HIS LOGIN PASSWORD: ";
+    cin>>pass;
+    log<<pass;
+
+    cout<<"\n\n\t\t\t\t\t(REGISTRATION SUCCESSFUL)";
+    log.close();
 }
 void addTeacher()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    char name[20],pass[20];
+    ofstream log("loginteachers.txt", ios::app);
+
+    cout<<"\n\n\t\t\t\t\tENTER NAME OF THE TEACHER: ";
+    cin>>name;
+    log<<"\n"<<name<<endl;
+
+    cout<<"\n\n\t\t\t\t\tENTER PASSWORD: ";
+    cin>>pass;
+    log<<pass;
+
+    cout<<"\n\n\t\t\t\t\t(REGISTRATION SUCCESSFUL)";
+    log.close();
 }
 void addAdmin()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    char name[20],pass[20];
+    ofstream log("loginadmins.txt", ios::app);
+
+    cout<<"\n\n\t\t\t\t\tENTER NAME OF ADMIN: ";
+    cin>>name;
+    log<<"\n"<<name<<endl;
+
+    cout<<"\n\n\t\t\t\t\tENTER PASSWORD FOR ADMIN: ";
+    cin>>pass;
+    log<<pass;
+
+    cout<<"\n\n\t\t\t\t\t(REGISTRATION SUCCESSFUL)";
+    log.close();
+
 }
 void removeRole()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
 }
-void seperationFunction()
+void seperationFunction() //we create separation between the functions
 {
     cout<<"\n\n";
     for (int i = 0; i < 120; ++i)
     {
-        cout<<"X"; //this is for seperation
+        cout<<"X"; //this is for separation
     }
     cout<<"\n\n";
 }
