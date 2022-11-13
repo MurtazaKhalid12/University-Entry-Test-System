@@ -1,24 +1,58 @@
 #include<iostream>
 #include "functions.h"
+#include<bits/stdc++.h>
+#include <fstream>
+#include <cstring>
 using namespace std;
-void studentFunction()
+void studentFunction(int login)
 {
     seperationFunction();
-    cout<<"\n\n\n\t\t\t\t\tWelcome Student";
-    studentShowOptions();
-}
-void teacherFunction()
-{
-    seperationFunction();
-    cout<<"\n\n\n\t\t\t\t\tWelcome Teacher";
-    teacherShowOptions();
-}
-void adminFunction()
-{
+    switch (login) {
+        case 1:
+            studentLogin();
+            break;
+        case 0:
+            cout<<"\n\n\t\t\t\t\tGoing back to mode selection\n";
+            seperationFunction();
+            break;
+        case 2:
+            cout<<"\n\n\n\t\t\t\t\tWelcome Student";
+            studentShowOptions();
+    }
 
+}
+void teacherFunction(int login)
+{
     seperationFunction();
-    cout<<"\n\n\n\t\t\t\t\tWelcome Admin";
-    adminShowOptions();
+    switch (login) {
+        case 1:
+            teacherLogin();
+            break;
+        case 0:
+            cout<<"\n\n\t\t\t\t\tGoing back to mode selection\n";
+            seperationFunction();
+            break;
+        case 2:
+            cout<<"\n\n\n\t\t\t\t\tWelcome Teacher.";
+            teacherShowOptions();
+    }
+
+}
+void adminFunction(int login)
+{
+    seperationFunction();
+    switch (login) {
+        case 1:
+            adminLogin();
+            break;
+        case 0:
+            cout<<"\n\n\t\t\t\t\tGoing back to mode selection\n";
+            seperationFunction();
+            break;
+        case 2:
+            cout<<"\n\n\n\t\t\t\t\tWelcome Admin.";
+            adminShowOptions();
+    }
 
 }
 //////////////////////////////////////////////////////////////////////
@@ -196,11 +230,45 @@ void adminOptionSelect()
 //STUDENT FUNCTIONS:
 void studentLogin()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    int count;
+    char loginroll[20],loginpass[20],rollnum[20],pass[20];
+
+    cout<<"\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
+    cin>>loginroll;
+    cout<<"\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin>>loginpass;
+
+    ifstream input("loginstudents.txt"); //to read the date from .txt file which we created to get registration input
+    input>>rollnum>>pass;
+
+    if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)";
+        studentFunction(2);
+    }
+    else
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)";
+        studentLoginLoop();
+    }
+
+    input.close();
 }
 void studentLoginLoop ()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+   cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+   cout<<"\n\n\t\t\t\t\t1)RETRY";
+   cout<<"\n\n\t\t\t\t\tYour input here: ";
+   int selection; cin>>selection;
+    switch (selection) {
+        case 0:
+            studentFunction(0);
+            break;
+        case 1:
+            studentFunction(1);
+            break;
+    }
+
 }
 void examFunction()
 {
@@ -243,12 +311,45 @@ void meritListFunction()
 //TEACHER FUNCTIONS:
 void teacherLogin()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    char loginname[20],loginpass[20],name[20],pass[20];
+    cout<<"\n\n\t\t\t\t\tIF YOU DONT HAVE AN ACCOUNT YET CONTACT ADMINISTRATION";
+    cout<<"\n\n\t\t\t\t\tENTER YOUR NAME: ";
+    cin>>loginname;
+    cout<<"\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin>>loginpass;
+
+    ifstream input("loginteachers.txt"); //to read the date from .txt file which we created to get registration input
+    input>>name>>pass;
+
+    if(strcmp(loginname,name)==0 && strcmp(loginpass,pass)==0)
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)";
+        teacherFunction(2);
+    }
+    else
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)";
+        teacherLoginLoop();
+    }
+
+    input.close();
 
 }
 void teacherLoginLoop ()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+    cout<<"\n\n\t\t\t\t\t1)RETRY";
+    cout<<"\n\n\t\t\t\t\tYour input here: ";
+    int selection; cin>>selection;
+    switch (selection) {
+        case 0:
+            teacherFunction(0);
+            break;
+        case 1:
+            teacherFunction(1);
+            break;
+    }
+
 }
 void checkEntryTest()
 {
@@ -274,11 +375,43 @@ void manipulateMarks()
 //ADMIN FUNCTIONS:
 void adminLogin()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    char loginname[20],loginpass[20],name[20],pass[20];
+    cout<<"\n\n\t\t\t\t\tENTER YOUR NAME: ";
+    cin>>loginname;
+    cout<<"\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin>>loginpass;
+
+    ifstream input("loginadmins.txt"); //to read the date from .txt file which we created to get registration input
+    input>>name>>pass;
+
+    if(strcmp(loginname,name)==0 && strcmp(loginpass,pass)==0)
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)";
+        adminFunction(2);
+    }
+    else
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)";
+        adminLoginLoop();
+    }
+
+    input.close();
+
 }
 void adminLoginLoop ()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+    cout<<"\n\n\t\t\t\t\t1)RETRY";
+    cout<<"\n\n\t\t\t\t\tYour input here: ";
+    int selection; cin>>selection;
+    switch (selection) {
+        case 0:
+            adminFunction(0);
+            break;
+        case 1:
+            adminFunction(1);
+            break;
+    }
 }
 void addStudent()
 {

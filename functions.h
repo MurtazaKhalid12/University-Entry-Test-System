@@ -1,6 +1,6 @@
-void studentFunction();
-void teacherFunction();
-void adminFunction();
+void studentFunction(int login);
+void teacherFunction(int login);
+void adminFunction(int login);
 //now smaller, insignificant functions
 
 //STUDENT FUNCTIONS:
