@@ -178,8 +178,9 @@ void adminShowOptions()
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Add Student";
     cout<<"\n\t\t\t\t\t2)Add Teacher";
-    cout<<"\n\t\t\t\t\t3)Add Admin\n\t\t\t\t\t4)Remove Student/Teacher/Admin";
-    cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION";
+    cout<<"\n\t\t\t\t\t3)Add Admin\n\t\t\t\t\t4)Remove Students";
+    cout<<"\n\t\t\t\t\t5)Remove Teachers";
+    cout<<"\n\t\t\t\t\t6)Back to MODE SELECTION";
     cout<<"\n\t\t\t\t\tYour input here: ";
     adminOptionSelect();
 }
@@ -208,12 +209,18 @@ void adminOptionSelect()
             adminShowOptions();
             break;
         case 4:
-            cout<<"\n\n\t\t\t\t\tRemove them from the throne, show your POWERRRRR\n";
-            removeRole();
+            cout<<"\n\n\t\t\t\t\tRemove any student from the PROGRAM\n";
+            removeStudents();
             seperationFunction();
             adminShowOptions();
             break;
         case 5:
+            cout<<"\n\n\t\t\t\t\tRemove any Teacher from the PROGRAM\n";
+            removeTeachers();
+            seperationFunction();
+            adminShowOptions();
+            break;
+        case 6:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
             seperationFunction();
             break;
@@ -378,7 +385,7 @@ void makeMCQs()
             xyz<<alp[j-1]<<")."<<str1<<endl;
         }
     }
-    cout<<"\n\n\t\t\t\t\t(MCQs CREATED)";
+    cout<<"\n\n\t\t\t\t\t(MCQS CREATED)";
     xyz.close();
 }
 void editMCQs()
@@ -484,10 +491,69 @@ void addAdmin()
     log.close();
 
 }
-void removeRole()
+
+void removeStudents()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    string strReplace;
+    cout << "Enter Student roll number \n";
+    cin >> strReplace;
+    string strNew="       \n";
+    ifstream orig("loginstudents.txt");
+    ofstream temp("temp.txt");
+    if (!orig || !temp)
+    {
+        cout << "Error opening files!" << endl;
+    }
+
+    string strTemp;
+    while (orig >> strTemp)
+    {
+        if (strTemp == strReplace)
+        {
+            strTemp = strNew;
+        }
+        strTemp += "\n";
+        temp << strTemp;
+
+    }
+    orig.close();
+    temp.close();
+    remove("loginstudents,txt");
+    rename("temp.txt", "loginstudents.txt");
 }
+void removeTeachers() {
+    string strReplace;
+    cout << "Enter Teacher Name \n";
+    cin >> strReplace;
+    string strNew = "       \n";
+    ifstream orig("loginteachers.txt");
+    ofstream temp("temp.txt");
+    if (!orig || !temp) {
+        cout << "Error opening files!" << endl;
+    }
+
+    string strTemp;
+    while (orig >> strTemp) {
+        if (strTemp == strReplace) {
+            strTemp = strNew;
+        }
+        strTemp += "\n";
+        temp << strTemp;
+
+    }
+    orig.close();
+    temp.close();
+    remove("loginteachers,txt");
+    rename("temp.txt", "loginteachers.txt");
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+
 void seperationFunction() //we create separation between the functions
 {
     cout<<"\n\n";
@@ -497,4 +563,3 @@ void seperationFunction() //we create separation between the functions
     }
     cout<<"\n\n";
 }
-

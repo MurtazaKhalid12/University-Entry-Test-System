@@ -30,7 +30,8 @@ void adminOptionSelect();
 void addStudent();
 void addTeacher();
 void addAdmin();
-void removeRole();
+void removeStudents();
+void removeTeachers();
 
 //Structure functions:
 void seperationFunction();
