@@ -9,7 +9,7 @@ void studentLoginLoop ();
 void studentShowOptions();
 void studentOptionSelect();
 void examFunction();
-void resultCheckFunction();
+void aggregateFunction();
 void admissionStatusFunction();
 void meritListFunction();
 //TEACHER FUNCTIONS:

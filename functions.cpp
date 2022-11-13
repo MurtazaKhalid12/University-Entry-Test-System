@@ -40,7 +40,7 @@ void studentShowOptions()
 {
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
-    cout<<"\n\t\t\t\t\t2)Individual report using STRUCTS";
+    cout<<"\n\t\t\t\t\t2)Calculate Aggregate";
     cout<<"\n\t\t\t\t\t3)Checking Admission Status\n\t\t\t\t\t4)View Merit Lists";
     cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
     studentOptionSelect();
@@ -59,7 +59,7 @@ void studentOptionSelect() //student selects options.
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tYou are already dead\n";
-            resultCheckFunction();
+            aggregateFunction();
             studentShowOptions();
             break;
         case 3:
@@ -200,11 +200,31 @@ void examFunction()
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
 
 }
-void resultCheckFunction()
+void aggregateFunction()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-
+    //function by Atif Ashraf
+    float totalmatricmarks, matricmarks, totalfscmarks, fscmarks, entrytestmarks, fulltestmarks;
+    totalmatricmarks=0, matricmarks=0, totalfscmarks=0;
+    fscmarks=0, entrytestmarks=0,fulltestmarks=0;
+    cout<<"\n\n\t\t\t\t\tAggregate calculation function\n";
+    cout<<"\n\n\t\t\t\t\tPlease enter total matric marks: ";
+    cin>>totalmatricmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter your achieved matric marks: ";
+    cin>>matricmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter total FSC marks: ";
+    cin>>totalfscmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter your obtained FSC marks: ";
+    cin>>fscmarks;
+    //replace entry test marks manually to file handling method.
+    cout<<"\n\n\t\t\t\t\tPlease enter full marks of ITU entry test: ";
+    cin>>fulltestmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter your ITU entry test marks: ";
+    cin>>entrytestmarks;
+    float aggregate;
+    aggregate= (matricmarks/totalmatricmarks)*20 + (fscmarks/totalfscmarks)*30 + (entrytestmarks/fulltestmarks)*50;
+    cout<<"\n\n\t\t\t\t\tYour aggregate is: "<<aggregate;
 }
+
 void admissionStatusFunction()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
