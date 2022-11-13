@@ -416,28 +416,28 @@ void manipulateMarks()
 //ADMIN FUNCTIONS:
 void adminLogin()
 {
-    char loginname[20],loginpass[20],name[20],pass[20];
-    cout<<"\n\n\t\t\t\t\tENTER YOUR NAME: ";
-    cin>>loginname;
-    cout<<"\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
-    cin>>loginpass;
+    int count;
+    char loginname[20], loginpass[20], name[20], pass[20];
+    cout << "\n\n\t\t\t\t\tENTER YOUR NAME: ";
+    cin >> loginname;
+    cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin >> loginpass;
 
     ifstream input("loginadmins.txt"); //to read the date from .txt file which we created to get registration input
-    input>>name>>pass;
-
-    if(strcmp(loginname,name)==0 && strcmp(loginpass,pass)==0)
-    {
-        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)";
-        adminFunction(2);
+    while (input >> name >> pass) {
+        if (strcmp(loginname, name) == 0 && strcmp(loginpass, pass) == 0) {
+            count = 1;
+        }
     }
-    else
-    {
-        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)";
+    if (count == 1) {
+        cout << "\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
+        adminFunction(2);
+    } else {
+        cout << "\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
         adminLoginLoop();
     }
 
     input.close();
-
 }
 void adminLoginLoop ()
 {
@@ -557,6 +557,7 @@ void removeTeachers() {
     temp.close();
     remove("loginteachers,txt");
     rename("temp.txt", "loginteachers.txt");
+    cout<<"\n\n\t\t\t\t\t(DELETION SUCCESSFUL)\n\n";
 }
 
 
