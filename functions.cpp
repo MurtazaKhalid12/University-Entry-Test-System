@@ -507,7 +507,7 @@ void addAdmin()
 void removeStudents()
 {
     string strReplace;
-    cout << "Enter Student roll number \n";
+    cout << "\n\n\t\t\t\t\tEnter Student roll number: ";
     cin >> strReplace;
     string strNew="       \n";
     ifstream orig("loginstudents.txt");
@@ -532,10 +532,11 @@ void removeStudents()
     temp.close();
     remove("loginstudents,txt");
     rename("temp.txt", "loginstudents.txt");
+    cout<<"\n\n\t\t\t\t\t(DELETION SUCCESSFUL)\n\n";
 }
 void removeTeachers() {
     string strReplace;
-    cout << "Enter Teacher Name \n";
+    cout << "\n\n\t\t\t\t\tEnter Teacher Name: ";
     cin >> strReplace;
     string strNew = "       \n";
     ifstream orig("loginteachers.txt");
