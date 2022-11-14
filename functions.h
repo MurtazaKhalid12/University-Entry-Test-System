@@ -1,3 +1,11 @@
+#include<iostream>
+#include<bits/stdc++.h>
+#include <fstream>
+#include <cstring>
+#include <string>
+#include <stdlib.h>
+#include <sstream>
+
 void studentFunction(int login);
 void teacherFunction(int login);
 void adminFunction(int login);
@@ -10,7 +18,7 @@ void studentShowOptions();
 void studentOptionSelect();
 void examFunction();
 void aggregateFunction();
-void admissionStatusFunction();
+void resultFunction();
 void meritListFunction();
 //TEACHER FUNCTIONS:
 void teacherLogin();
@@ -35,3 +43,20 @@ void removeTeachers();
 
 //Structure functions:
 void seperationFunction();
+
+extern double c;
+extern string w;
+extern char num;
+int compareFunction(std::string s1, std::string s2,int l);
+void PHD(int n);
+void MS(int n);
+void rollnumber(int n);
+void bsexamination();
+void msexamination();
+void phdexamination();
+void BS_RESULT_CHECK();
+void MS_RESULT_CHECK();
+void PHD_RESULT_CHECK();
+void BS_MERIT();
+void MS_MERIT();
+void PHD_MERIT();

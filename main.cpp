@@ -1,6 +1,13 @@
-#include <iostream>
+#include<iostream>
 #include "functions.h"
+#include<bits/stdc++.h>
+#include <fstream>
+#include <cstring>
 #include <string>
+#include <stdlib.h>
+#include <sstream>
+
+
 void loopProgram ();
 void optionShow();
 void optionSelect();
