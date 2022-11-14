@@ -77,3 +77,8 @@ void phdKEY();
 void editExistingDataMS(int num, char data);
 void editExistingDataBS(int num, char data);
 void editExistingDataPHD(int num, char data);
+
+////////////////////////////////////////////////
+void showBS();
+void showMS();
+void showPHD();

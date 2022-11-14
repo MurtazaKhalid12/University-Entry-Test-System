@@ -126,8 +126,7 @@ void teacherShowOptions ()
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Checking admission test";
     cout<<"\n\t\t\t\t\t2)Make MCQs for Paper";
     cout<<"\n\t\t\t\t\t3)EDIT MCQ key\n\t\t\t\t\t4)GENERATE Merit Lists";
-    cout<<"\n\t\t\t\t\t5)MANIPULATE student marks";
-    cout<<"\n\t\t\t\t\t6)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
+    cout<<"\n\t\t\t\t\t5)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
     teacherOptionSelect();
 }
 
@@ -138,7 +137,7 @@ void teacherOptionSelect()   //teacher options select
     cin.ignore();
     switch (option) {
         case 1:
-            cout<<"\n\n\t\t\t\t\tTake a look at the entry test.\n";
+            cout<<"\n\n\t\t\t\t\t(Take a look at the entry test.)\n";
             checkEntryTest();
             seperationFunction();
             teacherShowOptions();
@@ -162,17 +161,11 @@ void teacherOptionSelect()   //teacher options select
             teacherShowOptions();
             break;
         case 5:
-            cout<<"\n\n\t\t\t\t\tYes, manipulate their marks, you :D\n";
-            manipulateMarks();
-            seperationFunction();
-            teacherShowOptions();
-            break;
-        case 6:
-            cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            cout<<"\n\n\t\t\t\t\t(Thank you for your time)\n\n";
             seperationFunction();
             break;
         default:
-            cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
+            cout<<"\n\n\t\t\t\t\t(Enter a valid option next time)";
             seperationFunction();
             teacherOptionSelect();
             break;
@@ -463,9 +456,34 @@ void teacherLoginLoop ()
     }
 
 }
-void checkEntryTest()
-{
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+void checkEntryTest() {
+    int department;
+    cout << "\n \t\t  :\"SELECT DEPARTMENT TO VIEW THEIR MCQ FOR ANY QUERRY \":  \n \t";
+    cout << "\n \t\t\t1.TO VIEW BS MCQ \n \t\t\t2.TO VIEW MS MCQ\n \t\t\t3.TO VIEW PHD MCQ \n \t";
+    cout << "\n\t\t\t Enter HERE :";
+    cin >> department;
+    cin.clear();
+    cin.ignore();
+    switch (department) {
+        case 1: {
+            showBS();
+            break;
+        }
+        case 2: {
+            showMS();
+            break;
+        }
+        case 3: {
+
+            showPHD();
+            break;
+        }
+        default:
+            seperationFunction();
+            cout << "\n\n\t\t\t\t\tEnter a valid option next time";
+            studentOptionSelect();
+            break;
+    }
 }
 void makeMCQs()
 {
@@ -2056,4 +2074,42 @@ void editExistingDataPHD(int num, char data)
         out << arr[i] << endl;
     }
     out.close();
+}
+
+void showBS()
+{
+    fstream new_file;
+    new_file.open("BSPAPER.txt");
+    if(!new_file)
+        cout<<"No such file";  string ch;
+    while (!new_file.eof()) {
+        getline(new_file,ch).good();
+        cout << ch <<endl;
+    }
+    new_file.close();
+}
+void showMS()
+{
+    fstream new_file;
+    new_file.open("MSPAPER.txt");
+    if(!new_file)
+        cout<<"No such file";  string ch;
+    while (!new_file.eof()) {
+        getline(new_file,ch).good();
+        cout << ch <<endl;
+    }
+    new_file.close();
+}
+
+void showPHD()
+{
+    fstream new_file;
+    new_file.open("PHDPAPER.txt");
+    if(!new_file)
+        cout<<"No such file";  string ch;
+    while (!new_file.eof()) {
+        getline(new_file,ch).good();
+        cout << ch <<endl;
+    }
+    new_file.close();
 }
