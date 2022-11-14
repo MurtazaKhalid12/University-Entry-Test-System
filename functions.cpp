@@ -1,172 +1,233 @@
 #include<iostream>
 #include "functions.h"
+#include<bits/stdc++.h>
+#include <fstream>
+#include <cstring>
 using namespace std;
-void studentFunction(int dummy)
+void studentFunction(int login)
 {
-    int dummyvalue=1;
-    cout<<"\n\n\n";
-    for (int i = 0; i < 120; ++i)
-    {
-        cout<<"*"; //this is for seperation
+    seperationFunction();
+    switch (login) {
+        case 1:
+            studentLogin();
+            break;
+        case 0:
+            cout<<"\n\n\t\t\t\t\tGoing back to mode selection\n";
+            seperationFunction();
+            break;
+        case 2:
+            cout<<"\n\n\n\t\t\t\t\tWelcome Student";
+            studentShowOptions();
     }
-    cout<<"\n\n\n\t\t\t\t\tWelcome Student";
-    studentShowOptions(dummyvalue);
+
 }
-void teacherFunction(int dummy)
+void teacherFunction(int login)
 {
-    int dummyvalue=1;
-    cout<<"\n\n\n";
-    for (int i = 0; i < 120; ++i)
-    {
-        cout<<"*"; //this is for seperation
+    seperationFunction();
+    switch (login) {
+        case 1:
+            teacherLogin();
+            break;
+        case 0:
+            cout<<"\n\n\t\t\t\t\tGoing back to mode selection\n";
+            seperationFunction();
+            break;
+        case 2:
+            cout<<"\n\n\n\t\t\t\t\tWelcome Teacher.";
+            teacherShowOptions();
     }
-    cout<<"\n\n\n\t\t\t\t\tWelcome Teacher";
-    teacherShowOptions(dummyvalue);
+
 }
-void adminFunction(int dummy)
+void adminFunction(int login)
 {
-    int dummyvalue=1;
-    cout<<"\n\n\n";
-    for (int i = 0; i < 120; ++i)
-    {
-        cout<<"*"; //this is for seperation
+    seperationFunction();
+    switch (login) {
+        case 1:
+            adminLogin();
+            break;
+        case 0:
+            cout<<"\n\n\t\t\t\t\tGoing back to mode selection\n";
+            seperationFunction();
+            break;
+        case 2:
+            cout<<"\n\n\n\t\t\t\t\tWelcome Admin.";
+            adminShowOptions();
     }
-    cout<<"\n\n\n\t\t\t\t\tWelcome Admin";
-    adminShowOptions(dummyvalue);
 
 }
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //now we define the Option Select Functions
-void studentShowOptions(int dummy)
+void studentShowOptions()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
-    cout<<"\n\t\t\t\t\t2)Individual report using STRUCTS";
+    cout<<"\n\t\t\t\t\t2)Calculate Aggregate";
     cout<<"\n\t\t\t\t\t3)Checking Admission Status\n\t\t\t\t\t4)View Merit Lists";
     cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
-    studentOptionSelect(dummyvalue);
+    studentOptionSelect();
 }
 
-void studentOptionSelect(int dummy) //student selects options.
+void studentOptionSelect() //student selects options.
 {
-    int dummyvalue=1;
     int option; cin>>option;
+    cin.clear();
+    cin.ignore();
     switch (option) {
         case 1:
             cout<<"\n\n\t\t\t\t\tGet ready to suffer\n";
-            examFunction(dummyvalue);
+            examFunction();
+            seperationFunction();
+            studentShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tYou are already dead\n";
-            resultCheckFunction(dummyvalue);
+            aggregateFunction();
+            seperationFunction();
+            studentShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tThe only admission you get is to a mental institute\n";
-            admissionStatusFunction(dummyvalue);
+            admissionStatusFunction();
+            seperationFunction();
+            studentShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tMerit list function, the joke here is your meritXD\n";
-            meritListFunction(dummyvalue);
+            meritListFunction();
+            seperationFunction();
+            studentShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
             break;
         default:
+            seperationFunction();
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-            studentOptionSelect(dummyvalue);
+            studentOptionSelect();
+            break;
     }
 }
 /////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
-void teacherShowOptions (int dummy)
+void teacherShowOptions ()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Checking admission test";
-    cout<<"\n\t\t\t\t\t2)EDIT Question statement";
+    cout<<"\n\t\t\t\t\t2)Make MCQs for Paper";
     cout<<"\n\t\t\t\t\t3)EDIT MCQs\n\t\t\t\t\t4)GENERATE Merit Lists";
     cout<<"\n\t\t\t\t\t5)MANIPULATE student marks";
     cout<<"\n\t\t\t\t\t6)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
-    teacherOptionSelect(dummyvalue);
+    teacherOptionSelect();
 }
 
-void teacherOptionSelect(int dummy)   //teacher options select
+void teacherOptionSelect()   //teacher options select
 {
-    int dummyvalue=1;
     int option; cin>>option;
+    cin.clear();
+    cin.ignore();
     switch (option) {
         case 1:
-            cout<<"\n\n\t\t\t\t\tHave a look at the monster you created\n";
-            checkEntryTest(dummyvalue);
+            cout<<"\n\n\t\t\t\t\tTake a look at the entry test.\n";
+            checkEntryTest();
+            seperationFunction();
+            teacherShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tEdit the question statement here\n";
-            editQuestion(dummyvalue);
+            makeMCQs();
+            seperationFunction();
+            teacherShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tEdit MCQs and correct option SIRRRRRRR\n";
-            editMCQs(dummyvalue);
+            editMCQs();
+            seperationFunction();
+            teacherShowOptions();
             break;
         case 4:
             cout<<"\n\n\t\t\t\t\tGenerate merit list from marks sheet\n";
-            generateMeritList(dummyvalue);
+            generateMeritList();
+            seperationFunction();
+            teacherShowOptions();
             break;
         case 5:
             cout<<"\n\n\t\t\t\t\tYes, manipulate their marks, you :D\n";
-            manipulateMarks(dummyvalue);
+            manipulateMarks();
+            seperationFunction();
+            teacherShowOptions();
             break;
         case 6:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
             break;
         default:
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-            teacherOptionSelect(dummyvalue);
+            seperationFunction();
+            teacherOptionSelect();
+            break;
     }
 }
 
 //////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-void adminShowOptions(int dummy)
+void adminShowOptions()
 {
-    int dummyvalue=1;
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Add Student";
     cout<<"\n\t\t\t\t\t2)Add Teacher";
-    cout<<"\n\t\t\t\t\t3)Add Admin\n\t\t\t\t\t4)Remove Student/Teacher/Admin";
-    cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION";
+    cout<<"\n\t\t\t\t\t3)Add Admin\n\t\t\t\t\t4)Remove Students";
+    cout<<"\n\t\t\t\t\t5)Remove Teachers";
+    cout<<"\n\t\t\t\t\t6)Back to MODE SELECTION";
     cout<<"\n\t\t\t\t\tYour input here: ";
-    adminOptionSelect(dummyvalue);
+    adminOptionSelect();
 }
-void adminOptionSelect(int dummy)
+void adminOptionSelect()
 {
-    int dummyvalue=1;
     int option; cin>>option;
+    cin.clear();
+    cin.ignore();
     switch (option) {
         case 1:
             cout<<"\n\n\t\t\t\t\tAdd any student into any program\n";
-            addStudent(dummyvalue);
+            addStudent();
+            seperationFunction();
+            adminShowOptions();
             break;
         case 2:
             cout<<"\n\n\t\t\t\t\tAdd any teacher to any program\n";
-            addTeacher(dummyvalue);
+            addTeacher();
+            seperationFunction();
+            adminShowOptions();
             break;
         case 3:
             cout<<"\n\n\t\t\t\t\tAdd another admin to this system\n";
-            addAdmin(dummyvalue);
+            addAdmin();
+            seperationFunction();
+            adminShowOptions();
             break;
         case 4:
-            cout<<"\n\n\t\t\t\t\tRemove them from the throne, show your POWERRRRR\n";
-            removeRole(dummyvalue);
+            cout<<"\n\n\t\t\t\t\tRemove any student from the PROGRAM\n";
+            removeStudents();
+            seperationFunction();
+            adminShowOptions();
             break;
         case 5:
+            cout<<"\n\n\t\t\t\t\tRemove any Teacher from the PROGRAM\n";
+            removeTeachers();
+            seperationFunction();
+            adminShowOptions();
+            break;
+        case 6:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
             break;
         default:
             cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-            adminShowOptions(dummyvalue);
+            seperationFunction();
+            adminShowOptions();
     }
 }
 
@@ -174,115 +235,344 @@ void adminOptionSelect(int dummy)
 //then we start defining functions for the three modes
 
 //STUDENT FUNCTIONS:
-void studentLogin(int dummy)
+void studentLogin()
+{
+        int count;
+        char loginroll[20], loginpass[20], rollnum[20], pass[20];
+
+        cout << "\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
+        cin >> loginroll;
+        cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+        cin >> loginpass;
+        ifstream input("loginstudents.txt");
+        while (input >> rollnum >> pass)
+        {
+            if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
+            {
+                count=1;
+            }
+        }
+        if (count==1)
+        {
+            cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
+            studentFunction(2);
+
+        }
+        else
+        {
+            cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
+            studentLoginLoop();
+
+        }
+
+        input.close();
+}
+void studentLoginLoop ()
+{
+   cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+   cout<<"\n\n\t\t\t\t\t1)RETRY";
+   cout<<"\n\n\t\t\t\t\tYour input here: ";
+   int selection; cin>>selection;
+    switch (selection) {
+        case 0:
+            studentFunction(0);
+            break;
+        case 1:
+            studentFunction(1);
+            break;
+    }
+
+}
+void examFunction()
+{
+    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+
+}
+void aggregateFunction()
+{
+    //function by Atif Ashraf
+    float totalmatricmarks, matricmarks, totalfscmarks, fscmarks, entrytestmarks, fulltestmarks;
+    totalmatricmarks=0, matricmarks=0, totalfscmarks=0;
+    fscmarks=0, entrytestmarks=0,fulltestmarks=0;
+    cout<<"\n\n\t\t\t\t\tAggregate calculation function\n";
+    cout<<"\n\n\t\t\t\t\tPlease enter total matric marks: ";
+    cin>>totalmatricmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter your achieved matric marks: ";
+    cin>>matricmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter total FSC marks: ";
+    cin>>totalfscmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter your obtained FSC marks: ";
+    cin>>fscmarks;
+    //replace entry test marks manually to file handling method.
+    cout<<"\n\n\t\t\t\t\tPlease enter full marks of ITU entry test: ";
+    cin>>fulltestmarks;
+    cout<<"\n\n\t\t\t\t\tPlease enter your ITU entry test marks: ";
+    cin>>entrytestmarks;
+    float aggregate;
+    aggregate= (matricmarks/totalmatricmarks)*20 + (fscmarks/totalfscmarks)*30 + (entrytestmarks/fulltestmarks)*50;
+    cout<<"\n\n\t\t\t\t\tYour aggregate is: "<<aggregate;
+}
+
+void admissionStatusFunction()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
 }
-void studentLoginLoop (int dummy)
+void meritListFunction()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-}
-void examFunction(int dummy)
-{
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
-}
-void resultCheckFunction(int dummy)
-{
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
-}
-void admissionStatusFunction(int dummy)
-{
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
-}
-void meritListFunction(int dummy)
-{
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    studentShowOptions(dummyvalue);
 }
 //TEACHER FUNCTIONS:
-void teacherLogin(int dummy)
+void teacherLogin()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
+    int count;
+    char loginname[20],loginpass[20],name[20],pass[20];
+    cout<<"\n\n\t\t\t\t\tIF YOU DONT HAVE AN ACCOUNT YET, CONTACT ADMINISTRATION";
+    cout<<"\n\n\t\t\t\t\tENTER YOUR NAME: ";
+    cin>>loginname;
+    cout<<"\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin>>loginpass;
+
+    ifstream input("loginteachers.txt"); //to read the date from .txt file which we created to get registration input
+    while (input >> name >> pass)
+    {
+        if(strcmp(loginname,name)==0 && strcmp(loginpass,pass)==0)
+        {
+            count=1;
+        }
+    }
+    if (count==1)
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
+        teacherFunction(2);
+    }
+    else
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
+        teacherLoginLoop();
+    }
+
+    input.close();
+
 }
-void teacherLoginLoop (int dummy)
+void teacherLoginLoop ()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
+    cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+    cout<<"\n\n\t\t\t\t\t1)RETRY";
+    cout<<"\n\n\t\t\t\t\tYour input here: ";
+    int selection; cin>>selection;
+    switch (selection) {
+        case 0:
+            teacherFunction(0);
+            break;
+        case 1:
+            teacherFunction(1);
+            break;
+    }
+
 }
-void checkEntryTest(int dummy)
+void checkEntryTest()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
-void editQuestion(int dummy)
+void makeMCQs()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
+    int x;
+    cout<<"\n\n\t\t\t\t\t(WELCOME TO MCQS Making System)"<<endl;
+    cout<<"\n\n\t\t\t\t\tENTER THE NUMBER OF MCQS you want to make:- ";
+    cin>>x;
+    string str;
+    string str1;
+    ofstream xyz;
+    xyz.open("mcqs.txt",ios::app);
+    for(int i = 1;i<=x;i++)
+    {
+        cout<<"\n\n\t\t\t\t\tMCQS NUMBER "<<i<<":"<<" ";
+        getline(cin,str);
+        getline(cin,str);
+        xyz<<str<<endl;
+        for ( int j = 1; j <= 4; j++)
+        { string alp ="abcd";
+            cout<<"\n\n\t\t\t\t\toption number :- "<<j<<")";
+            getline(cin,str1);
+            xyz<<alp[j-1]<<")."<<str1<<endl;
+        }
+    }
+    cout<<"\n\n\t\t\t\t\t(MCQS CREATED)";
+    xyz.close();
 }
-void editMCQs(int dummy)
+void editMCQs()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
-void generateMeritList(int dummy)
+void generateMeritList()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
+
 }
-void manipulateMarks(int dummy)
+void manipulateMarks()
 {
     cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    teacherShowOptions(dummyvalue);
 }
 //ADMIN FUNCTIONS:
-void adminLogin(int dummy)
+void adminLogin()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
+    int count;
+    char loginname[20], loginpass[20], name[20], pass[20];
+    cout << "\n\n\t\t\t\t\tENTER YOUR NAME: ";
+    cin >> loginname;
+    cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin >> loginpass;
+
+    ifstream input("loginadmins.txt"); //to read the date from .txt file which we created to get registration input
+    while (input >> name >> pass) {
+        if (strcmp(loginname, name) == 0 && strcmp(loginpass, pass) == 0) {
+            count = 1;
+        }
+    }
+    if (count == 1) {
+        cout << "\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
+        adminFunction(2);
+    } else {
+        cout << "\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
+        adminLoginLoop();
+    }
+
+    input.close();
 }
-void adminLoginLoop (int dummy)
+void adminLoginLoop ()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
+    cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+    cout<<"\n\n\t\t\t\t\t1)RETRY";
+    cout<<"\n\n\t\t\t\t\tYour input here: ";
+    int selection; cin>>selection;
+    switch (selection) {
+        case 0:
+            adminFunction(0);
+            break;
+        case 1:
+            adminFunction(1);
+            break;
+    }
 }
-void addStudent(int dummy)
+void addStudent()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
+    string rollnum,pass;
+    ofstream log("loginstudents.txt", ios::app);
+
+    cout<<"\n\n\t\t\t\t\tENTER STUDENT ROLL NUMBER: ";
+    cin>>rollnum;
+    log<<"\n"<<rollnum<<endl;
+
+    cout<<"\n\n\t\t\t\t\tENTER HIS LOGIN PASSWORD: ";
+    cin>>pass;
+    log<<pass;
+
+    cout<<"\n\n\t\t\t\t\t(REGISTRATION SUCCESSFUL)";
+    log.close();
 }
-void addTeacher(int dummy)
+void addTeacher()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
+    char name[20],pass[20];
+    ofstream log("loginteachers.txt", ios::app);
+
+    cout<<"\n\n\t\t\t\t\tENTER NAME OF THE TEACHER: ";
+    cin>>name;
+    log<<"\n"<<name<<endl;
+
+    cout<<"\n\n\t\t\t\t\tENTER PASSWORD: ";
+    cin>>pass;
+    log<<pass;
+
+    cout<<"\n\n\t\t\t\t\t(REGISTRATION SUCCESSFUL)";
+    log.close();
 }
-void addAdmin(int dummy)
+void addAdmin()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
+    char name[20],pass[20];
+    ofstream log("loginadmins.txt", ios::app);
+
+    cout<<"\n\n\t\t\t\t\tENTER NAME OF ADMIN: ";
+    cin>>name;
+    log<<"\n"<<name<<endl;
+
+    cout<<"\n\n\t\t\t\t\tENTER PASSWORD FOR ADMIN: ";
+    cin>>pass;
+    log<<pass;
+
+    cout<<"\n\n\t\t\t\t\t(REGISTRATION SUCCESSFUL)";
+    log.close();
+
 }
-void removeRole(int dummy)
+
+void removeStudents()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-    int dummyvalue=1;
-    adminShowOptions(dummyvalue);
+    string strReplace;
+    cout << "\n\n\t\t\t\t\tEnter Student roll number: ";
+    cin >> strReplace;
+    string strNew="       \n";
+    ifstream orig("loginstudents.txt");
+    ofstream temp("temp.txt");
+    if (!orig || !temp)
+    {
+        cout << "Error opening files!" << endl;
+    }
+
+    string strTemp;
+    while (orig >> strTemp)
+    {
+        if (strTemp == strReplace)
+        {
+            strTemp = strNew;
+        }
+        strTemp += "\n";
+        temp << strTemp;
+
+    }
+    orig.close();
+    temp.close();
+    remove("loginstudents,txt");
+    rename("temp.txt", "loginstudents.txt");
+    cout<<"\n\n\t\t\t\t\t(DELETION SUCCESSFUL)\n\n";
+}
+void removeTeachers() {
+    string strReplace;
+    cout << "\n\n\t\t\t\t\tEnter Teacher Name: ";
+    cin >> strReplace;
+    string strNew = "       \n";
+    ifstream orig("loginteachers.txt");
+    ofstream temp("temp.txt");
+    if (!orig || !temp) {
+        cout << "Error opening files!" << endl;
+    }
+
+    string strTemp;
+    while (orig >> strTemp) {
+        if (strTemp == strReplace) {
+            strTemp = strNew;
+        }
+        strTemp += "\n";
+        temp << strTemp;
+
+    }
+    orig.close();
+    temp.close();
+    remove("loginteachers,txt");
+    rename("temp.txt", "loginteachers.txt");
+    cout<<"\n\n\t\t\t\t\t(DELETION SUCCESSFUL)\n\n";
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+
+void seperationFunction() //we create separation between the functions
+{
+    cout<<"\n\n";
+    for (int i = 0; i < 120; ++i)
+    {
+        cout<<"X"; //this is for separation
+    }
+    cout<<"\n\n";
 }

@@ -3,6 +3,4 @@ b
 c
 d
 e
-a
-e
-r
+f
