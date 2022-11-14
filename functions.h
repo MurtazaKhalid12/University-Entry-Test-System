@@ -23,6 +23,7 @@ void examFunction();
 void aggregateFunction();
 void resultFunction();
 void meritListFunction();
+void programDetails();
 //TEACHER FUNCTIONS:
 void teacherLogin();
 void teacherLoginLoop ();
@@ -61,3 +62,8 @@ void PHD_RESULT_CHECK();
 void BS_MERIT();
 void MS_MERIT();
 void PHD_MERIT();
+
+
+void first_phd();
+void first_ms();
+void first_bs();

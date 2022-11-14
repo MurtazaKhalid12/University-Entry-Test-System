@@ -67,7 +67,7 @@ void studentShowOptions()
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
     cout<<"\n\t\t\t\t\t2)Calculate Aggregate";
     cout<<"\n\t\t\t\t\t3)Check Result of Test\n\t\t\t\t\t4)View Merit Lists";
-    cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
+    cout<<"\n\t\t\t\t\t5)Check Program Details\n\t\t\t\t\t6)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
     studentOptionSelect();
 }
 
@@ -102,6 +102,12 @@ void studentOptionSelect() //student selects options.
             studentShowOptions();
             break;
         case 5:
+            cout<<"\n\n\t\t\t\t\t(Check University Program Details Here.)\n";
+            programDetails();
+            seperationFunction();
+            studentShowOptions();
+            break;
+        case 6:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
             seperationFunction();
             break;
@@ -1428,4 +1434,418 @@ void PHD_MERIT()
 }
 
 
+void programDetails()
+{
+    int department ;
+    cout << " \t\t\tCHOOSE ONE DEPARTMENT FOR ITS INFORMATION:"<<endl;
+    cout << " \t\t\t\t: Departments  are :"<< "\n"<<"1.\"BS\" \n"<<"2.\"MS\" \n";
+    cout<<"3.\"PHD\" \n";
+    cout<<"\t\t\t:ENTER DEPARTMENT NUMBER HERE: ";
+    cin>>department;
+    switch (department) {
 
+        case 1:
+            first_bs();
+            break;
+        case 2:
+            first_ms();
+            break;
+        case 3:
+            first_phd();
+            break;
+    }
+}
+void first_bs()
+{
+    {
+        {
+            int a;
+            fstream bs;("bs_course.txt", ios::out);
+            bs.open("bs.txt", ios::out);
+            cout<<"\n \tWHICH OF THE FOLLOWING INFORMATION YOU NEED TO KNOW ABOUT :";
+            cout << "\n \t\t\t\t: COURSES :"<< "\n"<<"1.\"BSCE\" \n"<<"2.\"BSEE\" \n";
+            cout<<"3.\"BSCS\" \n";
+            cout<<"\t\t\t:ENTER COURSE NUMBER HERE: ";
+            cin>>a;
+            switch (a) {
+                case 1: {
+                    int m;
+                    cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT BSCE FROM FOLLOWING : ";
+                    cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                         << "2.\"MERIT CRITERIA\" \n";
+                    cout << "3.\"COURSE OUTLINE \" \n ";
+                    cout << "\n\t\t\t:ENTER  HERE: ";
+                    cin >> m;
+                    if (m == 1) {
+                        cout << " \t\t\t:   MCQ TEST FORMAT WILL BE  :\n" << endl;
+                        cout << "\t\tMCQ will be divided in these sections:\n \n";
+                        cout << " \t\t 1. 1-4 Will be from \"analytical reasoning\"  \n";
+                        cout << " \t\t 2. 5-9 Will be from \"physics\"  \n";
+                        cout << " \t\t 3. 10-14 Will be from \"maths\"  \n";
+                        cout << " \t\t 4. 14-20 Will be from \"english\"  \n";
+                        break;
+                    } else if (m == 2) {
+                        cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                        cout << "\t\t IT WLL BE CALCULATED ACCORDING TO 70% INTER RESULT AND 30% ENTRY TEST:\n \n";
+                        cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL COURCES\" \n";
+                        cout
+                                << " \t\t IF YOUR SCORE IS ABOVE 80%   \"A\" \"YOU ARE ELIGIBLE FOR BSCE,BSEE COURCES\"  \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                        cout << " \t\t  IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                        break;
+                    } else if (m == 3) {
+                        cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                        cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                        cout << "\t\t  1.COMMUNICATION SKILL (WITH 3 CREDIT HOURS ) \n";
+                        cout << " \t\t 2.COMPUTER FUNDAMENTALS (4 CREDIT HOURS)\n";
+                        cout << " \t\t 3.APPLIED PHY (WITH 3 CREDIT HOURS )  \n";
+                        cout << " \t\t 4.CALCULUS (CREDIT HOURS 3) \n";
+                        cout << " \t\t 5.LCA (WITH 3 CREDIT HOURS )  \n \n";
+                        break;
+                    }
+                }
+                    break;
+                case 2:
+                {
+                    int z;
+                    cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT BSEE FROM FOLLOWING : ";
+                    cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                         << "2.\"MERIT CRITERIA\" \n";
+                    cout << "3.\"COURSE OUTLINE \" \n ";
+                    cout << "\n\t\t\t:ENTER  HERE: ";
+                    cin >> z;
+                    if (z == 1)
+                    {
+                        cout << " \t\t\t:   MCQ TEST FORMAT OF BSEE WILL BE  :\n" << endl;
+                        cout << "\t\tMCQ will be divided in these sections:\n \n";
+                        cout << " \t\t 1. 1-5 Will be from \"analytical reasoning\"  \n";
+                        cout << " \t\t 2. 6-9 Will be from \"physics\"  \n";
+                        cout << " \t\t 3. 10-14 Will be from \"maths\"  \n";
+                        cout << " \t\t 4. 14-20 Will be from \"english\"  \n";
+                        break;
+                    } else if (z == 2)
+                    {
+                        cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                        cout << "\t\t IT WLL BE CALCULATED ACCORDING TO 70% INTER RESULT AND 30% ENTRY TEST:\n \n";
+                        cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL COURCES\" \n";
+                        cout<< " \t\t IF YOUR SCORE IS ABOVE 80%   \"A\" \"YOU ARE ELIGIBLE FOR BSCE,BSEE COURCES\"  \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                        cout << " \t\t  IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                        break;
+                    } else if (z == 3) {
+                        cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                        cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                        cout << "\t\t  1.COMMUNICATION SKILL (WITH 3 CREDIT HOURS ) \n";
+                        cout << " \t\t 2.COMPUTER FUNDAMENTALS (4 CREDIT HOURS)\n";
+                        cout << " \t\t 3.APPLIED PHY (WITH 3 CREDIT HOURS )  \n";
+                        cout << " \t\t 4.CALCULUS (CREDIT HOURS 3) \n";
+                        cout << " \t\t 3.ELECTRONIC BENCH (WITH 1 CREDIT HOURS )  \n";
+                        cout << " \t\t 5.LCA (WITH 3 CREDIT HOURS )  \n \n";
+                        break;
+                    }
+                    case 3:
+                    {
+
+                        int d;
+                        cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT BSCS FROM FOLLOWING : ";
+                        cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                             << "2.\"MERIT CRITERIA\" \n";
+                        cout << "3.\"COURSE OUTLINE \" \n ";
+                        cout << "\n\t\t\t:ENTER  HERE: ";
+                        cin >> d;
+                        if (d == 1)
+                        {
+                            cout << " \t\t\t:   MCQ TEST FORMAT OF BSCS WILL BE  :\n" << endl;
+                            cout << "\t\tMCQ will be divided in these sections:\n \n";
+                            cout << " \t\t 1. 1-9 Will be from \"analytical reasoning\"  \n";
+                            cout << " \t\t 2. 9-14 Will be from \"maths\"  \n";
+                            cout << " \t\t 3. 14-20 Will be from \"english\"  \n";
+                            break;
+                        } else if (d == 2)
+                        {
+                            cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                            cout << "\t\t IT WLL BE CALCULATED ACCORDING TO 70% INTER RESULT AND 30% ENTRY TEST:\n \n";
+                            cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL COURCES\" \n";
+                            cout<< " \t\t IF YOUR SCORE IS ABOVE 80%  \"A\" \"YOU ARE ELIGIBLE FOR BSCE,BSEE COURCES\"  \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                            break;
+                        } else if (d == 3) {
+                            cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                            cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                            cout << "\t\t 1.INTRODUCTION TO ICT (WITH 3 CREDIT HOURS ) \n";
+                            cout << " \t\t 2.PROGRAMMING AND FUNDAMENTAL (4 CREDIT HOURS)\n";
+                            cout << " \t\t 3.ENGLISH COMPOSITION & COMPREHENSION (WITH 3 CREDIT HOURS )  \n";
+                            cout << " \t\t 4.CALCULUS (CREDIT HOURS 3) \n";
+                            cout << " \t\t 3.QURAN TRANSLATION (WITH 1 CREDIT HOURS )  \n";
+                            break;
+                        }
+
+                    }
+                    break;
+                }}
+        }
+
+    }
+}
+
+
+void first_ms()
+{
+    {
+        {
+            int x;
+            cout<<"\n \tWHICH OF THE FOLLOWING INFORMATION YOU NEED TO KNOW ABOUT :";
+            cout << "\n \t\t\t\t: COURSES :"<< "\n"<<"1.\"MSCE\" \n"<<"2.\"MSEE\" \n";
+            cout<<"3.\"MSCS\" \n";
+            cout<<"\t\t\t:ENTER COURSE NUMBER HERE: ";
+            cin>>x;
+            switch (x) {
+                case 1: {
+                    int i;
+                    cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT MSCE FROM FOLLOWING : ";
+                    cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                         << "2.\"MERIT CRITERIA\" \n";
+                    cout << "3.\"COURSE OUTLINE \" \n ";
+                    cout << "\n\t\t\t:ENTER  HERE: ";
+                    cin >> i;
+                    if (i == 1) {
+                        cout << " \t\t\t:   MCQ TEST FORMAT OF MSCE WILL BE  :\n" << endl;
+                        cout << "\t\tMCQ will be divided in these sections:\n \n";
+                        cout << " \t\t 1. 1-4 Will be from \"ENGLISH\"  \n";
+                        cout << " \t\t 2. 5-9 Will be from \"MATH \"  \n";
+                        cout << " \t\t 3. 10-14 Will be from \"ANALYTICS\"  \n";
+                        cout << " \t\t 4. 14-20 Will be from \"COMPUTER SCIENCE \"  \n";
+                        break;
+                    } else if (i== 2) {
+                        cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                        cout << "\t\t IT WLL BE CALCULATED ACCORDING TO 60% BS RESULT AND 40% ENTRY TEST:\n \n";
+                        cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL COURCES\" \n";
+                        cout<< " \t\t IF YOUR SCORE IS ABOVE 80%   \"A\" \"YOU ARE ELIGIBLE FOR MSCE,MSEE COURCES\"  \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                        cout << " \t\t  IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                        break;
+                    } else if (i== 3) {
+                        cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                        cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                        cout << "\t\t  1. CS 511 D-LAB I \n";
+                        cout << " \t\t 2.CS 512 D-LAB II\n";
+                        cout << " \t\t 3.CS 505 Advanced Computer Architecture\n";
+                        cout << " \t\t 4.CS501 Advanced Operating System\n";
+                        cout << " \t\t 5.MG515 Entrepreneurship\n \n";
+                        break;
+                    }
+                }
+                    break;
+                case 2:
+                {
+                    int z;
+                    cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT MSEE FROM FOLLOWING : ";
+                    cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                         << "2.\"MERIT CRITERIA\" \n";
+                    cout << "3.\"COURSE OUTLINE \" \n ";
+                    cout << "\n\t\t\t:ENTER  HERE: ";
+                    cin >> z;
+                    if (z == 1)
+                    {
+                        cout << " \t\t\t:   MCQ TEST FORMAT OF MSEE WILL BE  :\n" << endl;
+                        cout << "\t\tMCQ will be divided in these sections:\n \n";
+                        cout << " \t\t 1. 1-5 Will be from \"analytical reasoning\"  \n";
+                        cout << " \t\t 3. 5-9 Will be from \"maths\"  \n";
+                        cout << " \t\t 4. 10-20 Will be from  \"electric circuits \"  \n";
+                        break;
+                    } else if (z == 2)
+                    {
+                        cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                        cout << "\t\t IT WLL BE CALCULATED ACCORDING TO 60% BS RESULT AND 40% ENTRY TEST:\n \n";
+                        cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL MS COURCES\" \n";
+                        cout<< " \t\t IF YOUR SCORE IS ABOVE 80%   \"A\" \"YOU ARE ELIGIBLE FOR MSCE,MSEE COURCES\"  \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                        cout << " \t\t  IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                        break;
+                    } else if (z == 3) {
+                        cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                        cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                        cout << "\t\t  1.Analysis of Stochastic Systems\t \n";
+                        cout << " \t\t 2.Advanced Mathematics\n";
+                        cout << " \t\t 3.VLSI Architecture and Systems\n";
+                        cout << " \t\t 4.Advanced Semiconductor Device Physics\n";
+                        break;
+                    }
+                    case 3:
+                    {
+                        int d;
+                        cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT MSCS FROM FOLLOWING : ";
+                        cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                             << "2.\"MERIT CRITERIA\" \n";
+                        cout << "3.\"COURSE OUTLINE \" \n ";
+                        cout << "\n\t\t\t:ENTER  HERE: ";
+                        cin >> d;
+                        if (d == 1)
+                        {
+                            cout << " \t\t\t:   MCQ TEST FORMAT OF MSCS WILL BE  :\n" << endl;
+                            cout << "\t\tMCQ will be divided in these sections:\n \n";
+                            cout << " \t\t 1. 1-9 Will be from \"analytical reasoning\"  \n";
+                            cout << " \t\t 2. 9-14 Will be from \"maths\"  \n";
+                            cout << " \t\t 3. 14-20 Will be from \"computer science core\"  \n";
+                            break;
+                        } else if (d == 2)
+                        {
+                            cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                            cout << "\t\t IT WLL BE CALCULATED ACCORDING TO 70% BS RESULT AND 30% ENTRY TEST:\n \n";
+                            cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL COURCES\" \n";
+                            cout<< " \t\t IF YOUR SCORE IS ABOVE 80%  \"A\" \"YOU ARE ELIGIBLE FOR MSCE,MSEE COURCES\"  \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                            break;
+                        } else if (d == 3) {
+                            cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                            cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                            cout << "\t\t 1.Tools and Techniques for Data Science \n";
+                            cout << " \t\t 2.Statistical and Mathematical Methods for Data Analysis\n";
+                            cout << " \t\t 3. Information Retrieval and Text Mining \n";
+                            cout << " \t\t 4.tResearch Methodology\n";
+                            break;
+                        }
+
+                    }
+                    break;}
+            }
+        }
+
+    }
+}
+void first_phd()
+{
+    {{
+
+            int q;
+            cout<<"\n \tWHICH OF THE FOLLOWING INFORMATION YOU NEED TO KNOW ABOUT :";
+            cout << "\n \t\t\t\t: COURSES :"<< "\n"<<"1.\"PHD CE\" \n"<<"2.\"PHD EE\" \n";
+            cout<<"3.\"PHD CS\" \n";
+            cout<<"\t\t\t:ENTER COURSE NUMBER HERE: ";
+            cin>>q;
+            switch (q) {
+                case 1: {
+                    int i;
+                    cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT PHDCE FROM FOLLOWING : ";
+                    cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                         << "2.\"MERIT CRITERIA\" \n";
+                    cout << "3.\"COURSE OUTLINE \" \n ";
+                    cout << "\n\t\t\t:ENTER  HERE: ";
+                    cin >> i;
+                    if (i == 1) {
+                        cout << " \t\t\t:   MCQ TEST FORMAT OF PHD CE WILL BE  :\n" << endl;
+                        cout << "\t\tMCQ will be divided in these sections:\n \n";
+                        cout << " \t\t 1. 1-4 Will be from \"ENGLISH\"  \n";
+                        cout << " \t\t 2. 5-9 Will be from \"MATH \"  \n";
+                        cout << " \t\t 3. 10-14 Will be from \"ANALYTICS\"  \n";
+                        cout << " \t\t 4. 14-20 Will be from \"COMPUTER SCIENCE (CORE,ARCHITECTURE ETC) \"  \n";
+                        break;
+                    } else if (i == 2) {
+                        cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                        cout << "\t\t IT WLL BE CALCULATED ACCORDING TO % INTER RESULT AND 40% ENTRY TEST:\n \n";
+                        cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL COURCES\" \n";
+                        cout
+                                << " \t\t IF YOUR SCORE IS ABOVE 80%   \"A\" \"YOU ARE ELIGIBLE FOR PHD CE,EE,CS COURCES\"  \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                        cout << " \t\t  IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                        break;
+                    } else if (i == 3) {
+                        cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                        cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                        cout << "\t\t  1.Object-oriented programming in C++\n";
+                        cout << " \t\t 2.Computer Database Organization\n";
+                        cout << " \t\t 3.Elements of Digital Computer AND FURTHER MORE \n";
+                        break;
+                    }
+
+                    break;
+                }
+                case 2:
+                {
+                    int z;
+                    cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT PHD EE FROM FOLLOWING : ";
+                    cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                         << "2.\"MERIT CRITERIA\" \n";
+                    cout << "3.\"COURSE OUTLINE \" \n ";
+                    cout << "\n\t\t\t:ENTER  HERE: ";
+                    cin >> z;
+                    if (z == 1)
+                    {
+                        cout << " \t\t\t:   MCQ TEST FORMAT OF PHD EE WILL BE  :\n" << endl;
+                        cout << "\t\tMCQ will be divided in these sections:\n \n";
+                        cout << " \t\t 1. 1-5 Will be from \"topics related to bs \"  \n";
+                        cout << " \t\t 3. 5-9 Will be from \"ELECTRICAL CIRCUITS\"  \n";
+                        cout << " \t\t 4. 10-20 Will be from  \"MATHS \"  \n";
+                        cout << " \t\t 4. 10-20 Will be from  \" ENGLISH \"  \n";
+                        break;
+                    } else if (z == 2)
+                    {
+                        cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                        cout << "\t\t IT WLL BE CALCULATED ACCORDING TO ENTRY TEST PERCENTAGE AND BS AGREGATE:\n \n";
+                        cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL PHD COURCES\" \n";
+                        cout<< " \t\t IF YOUR SCORE IS ABOVE 80%   \"A\" \"YOU ARE ELIGIBLE FOR PHD CE,EE COURCES\"  \n";
+                        cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                        cout << " \t\t  IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                        break;
+                    } else if (z == 3) {
+                        cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                        cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                        cout << "\t\t  1.Analysis of Stochastic Systems\t \n";
+                        cout << " \t\t 2.ADVANE DIGITAL SIGNALS\n";
+                        cout << " \t\t 3.ADVANCE DIGITAL SYSTEM DESIGN \n";
+                        cout << " \t\t 4.DSP HARDWARE DESIGN \n";
+                        break;
+                    }
+                    case 3:
+                    {
+                        int d;
+                        cout << "\t:WHAT KIND OF INFORMATION YOU NEED ABOUT PHD CS FROM FOLLOWING : ";
+                        cout << " \n\t\t\t\t:SELECT ONE :" << "\n" << "1.\"MCQ TEST FORMAT\" \n"
+                             << "2.\"MERIT CRITERIA\" \n";
+                        cout << "3.\"COURSE OUTLINE \" \n ";
+                        cout << "\n\t\t\t:ENTER  HERE: ";
+                        cin >> d;
+                        if (d == 1)
+                        {
+                            cout << " \t\t\t:   MCQ TEST FORMAT OF PHD CS WILL BE  :\n" << endl;
+                            cout << "\t\tMCQ will be divided in these sections:\n \n";
+                            cout << " \t\t 1. 1-9 Will be from \"analytical reasoning\"  \n";
+                            cout << " \t\t 2. 9-14 Will be from \"maths\"  \n";
+                            cout << " \t\t 3. 14-20 Will be from \"computer science core\"  \n";
+                            cout << " \t\t 3. 14-20 Will be from \"english\"  \n";
+                            break;
+                        } else if (d == 2)
+                        {
+                            cout << " \t\t\t:  MERIT CRITERIA  :\n" << endl;
+                            cout << "\t\t IT WLL BE CALCULATED ACCORDING TO 70% BS RESULT AND 30% ENTRY TEST:\n \n";
+                            cout << "\t\t YOU WILL BE GRADED ACCORDINGLY :\n \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 90%  \"A+\" \"YOU ARE ELIGIBLE FOR ALL COURCES\" \n";
+                            cout<< " \t\t IF YOUR SCORE IS ABOVE 80%  \"A\" \"YOU ARE ELIGIBLE FOR PHD CS,CE COURCES\"  \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 70%  \"B+\" \"YOU CAN APPLY FOR VACANCY ONLY\"  \n";
+                            cout << " \t\t IF YOUR SCORE IS ABOVE 60% \"B\" \"YOU ARE NOT ELIGIBLE FOR ALL COURCES\"  \n";
+                            break;
+                        } else if (d == 3) {
+                            cout << " \t\t\t: COURCE OUTLINE  :\n" << endl;
+                            cout << "\t\t YOUR SUBJECTS WILL BE :\n \n";
+                            cout << "\t\t 1.DATA BASE SYSTEM \n";
+                            cout << " \t\t 2.COMPUTER ARCHITECTURE SYSTEM\n";
+                            cout << " \t\t 3.NETWORKING \n";
+                            cout << " \t\t 4.SOFTWARE RELATED \n";
+                            break;
+                        }
+
+                        break;}
+                }}
+        }
+    }
+}
