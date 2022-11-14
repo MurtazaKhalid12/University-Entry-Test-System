@@ -44,11 +44,11 @@ void addTeacher();
 void addAdmin();
 void removeStudents();
 void removeTeachers();
-
+void change();
 //Structure functions:
 void seperationFunction();
 
-
+//studentSmallerfunctions
 int compareFunction(std::string s1, std::string s2,int l);
 void PHD(int n);
 void MS(int n);
@@ -63,13 +63,11 @@ void BS_MERIT();
 void MS_MERIT();
 void PHD_MERIT();
 
-
+//teachersmallerfunctions
 void first_phd();
 void first_ms();
 void first_bs();
 
-
-/////////////////////////////////////////////
 void bsKEY();
 void msKEY();
 void phdKEY();
