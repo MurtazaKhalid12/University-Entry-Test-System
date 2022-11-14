@@ -67,7 +67,7 @@ void studentShowOptions()
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
     cout<<"\n\t\t\t\t\t2)Calculate Aggregate";
     cout<<"\n\t\t\t\t\t3)Check Result of Test\n\t\t\t\t\t4)View Merit Lists";
-    cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
+    cout<<"\n\t\t\t\t\t5)Check Program Details\n\t\t\t\t\t6)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
     studentOptionSelect();
 }
 
@@ -102,6 +102,12 @@ void studentOptionSelect() //student selects options.
             studentShowOptions();
             break;
         case 5:
+            cout<<"\n\n\t\t\t\t\t(Check University Program Details Here.)\n";
+            programDetails();
+            seperationFunction();
+            studentShowOptions();
+            break;
+        case 6:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
             seperationFunction();
             break;
@@ -119,9 +125,8 @@ void teacherShowOptions ()
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Checking admission test";
     cout<<"\n\t\t\t\t\t2)Make MCQs for Paper";
-    cout<<"\n\t\t\t\t\t3)EDIT MCQs\n\t\t\t\t\t4)GENERATE Merit Lists";
-    cout<<"\n\t\t\t\t\t5)MANIPULATE student marks";
-    cout<<"\n\t\t\t\t\t6)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
+    cout<<"\n\t\t\t\t\t3)EDIT MCQ key\n\t\t\t\t\t4)GENERATE Merit Lists";
+    cout<<"\n\t\t\t\t\t5)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
     teacherOptionSelect();
 }
 
@@ -132,41 +137,35 @@ void teacherOptionSelect()   //teacher options select
     cin.ignore();
     switch (option) {
         case 1:
-            cout<<"\n\n\t\t\t\t\t(Take a look at the entry test.)\n";
+            cout<<"\n\n\t\t\t\t\t(Take a look at the entry test)\n";
             checkEntryTest();
             seperationFunction();
             teacherShowOptions();
             break;
         case 2:
-            cout<<"\n\n\t\t\t\t\tEdit the question statement here\n";
+            cout<<"\n\n\t\t\t\t\t(MAKE MCQS FOR PAPER HERE)\n";
             makeMCQs();
             seperationFunction();
             teacherShowOptions();
             break;
         case 3:
-            cout<<"\n\n\t\t\t\t\tEdit MCQs and correct option SIRRRRRRR\n";
+            cout<<"\n\n\t\t\t\t\t(EDIT MCQS KEY HERE)\n";
             editMCQs();
             seperationFunction();
             teacherShowOptions();
             break;
         case 4:
-            cout<<"\n\n\t\t\t\t\tGenerate merit list from marks sheet\n";
+            cout<<"\n\n\t\t\t\t\t(GENERATE MANUAL MERIT LIST)\n";
             generateMeritList();
             seperationFunction();
             teacherShowOptions();
             break;
         case 5:
-            cout<<"\n\n\t\t\t\t\tYes, manipulate their marks, you :D\n";
-            manipulateMarks();
-            seperationFunction();
-            teacherShowOptions();
-            break;
-        case 6:
-            cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            cout<<"\n\n\t\t\t\t\t(Thank you for your time)\n\n";
             seperationFunction();
             break;
         default:
-            cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
+            cout<<"\n\n\t\t\t\t\t(Enter a valid option next time)";
             seperationFunction();
             teacherOptionSelect();
             break;
@@ -457,9 +456,34 @@ void teacherLoginLoop ()
     }
 
 }
-void checkEntryTest()
-{
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+void checkEntryTest() {
+    int department;
+    cout << "\n \t\t  :\"SELECT DEPARTMENT TO VIEW THEIR MCQ FOR ANY QUERRY \":  \n \t";
+    cout << "\n \t\t\t1.TO VIEW BS MCQ \n \t\t\t2.TO VIEW MS MCQ\n \t\t\t3.TO VIEW PHD MCQ \n \t";
+    cout << "\n\t\t\t Enter HERE :";
+    cin >> department;
+    cin.clear();
+    cin.ignore();
+    switch (department) {
+        case 1: {
+            showBS();
+            break;
+        }
+        case 2: {
+            showMS();
+            break;
+        }
+        case 3: {
+
+            showPHD();
+            break;
+        }
+        default:
+            seperationFunction();
+            cout << "\n\n\t\t\t\t\tEnter a valid option next time";
+            studentOptionSelect();
+            break;
+    }
 }
 void makeMCQs()
 {
@@ -497,11 +521,58 @@ void makeMCQs()
 }
 void editMCQs()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    int x;
+    cout<<"\n\n\t\t\t\t\tEnter 1 for editing BS KEY";
+    cout<<"\n\n\t\t\t\t\tEnter 2 for editing MS KEY";
+    cout<<"\n\n\t\t\t\t\tEnter 3 for editing PHD KEY";
+    cin>>x;
+    switch (x)
+    {
+        case 1:
+            bsKEY();
+            break;
+        case 2:
+            msKEY();
+            break;
+        case 3:
+            phdKEY();
+            break;
+        default:
+            cout<<"\n\n\t\t\t\t\tPlease enter valid choice next time";
+    }
 }
 void generateMeritList()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    char t;
+    do
+    {
+        string st2;
+        string st1;
+        cout<<"\t\t\t\t"<<"FORMAT(BSPROGRAM/MSPROGRAM/PHDPROGRAM)\n";
+        cout<<"\t\t\t\tENTER THE PROGRAM YOU WANT TO SELECT THEM FOR: ";
+        cin>>st1;
+        cout<<endl;
+        int x;
+        cout<<"ENTER THE NUMBER OF STUDENTS : ";
+        cin>>x;
+        cout<<endl;
+        cout<<"\t\t\t"<<"FORMAT(2201 YOU HAVE BEEN SELECTED IN COMPUTER ENGINEERING)"<<endl;
+        ofstream make;
+        make.open(st1+".txt",ios::app);
+        getline(cin,st2);
+        for(int i = 1;i<=x;i++)
+        {
+            cout<<"ENTER STUDENT "<<i<<" MERIT : " ;
+            getline(cin,st2);
+
+            make<<st2<<endl;
+        }
+        make.close();
+        cout<<"ENTER Y FOR REUSING\n";
+        int t;
+        cin>>t;
+    }
+    while(t=='y'||t=='Y');
 
 }
 void manipulateMarks()
@@ -671,39 +742,12 @@ void seperationFunction() //we create separation between the functions
     }
     cout<<"\n\n";
 }
-
-
-int compareFunction(std::string s1, std::string s2,int l)
-
-{
-    int f = 0;
-    int s = 0;
-    for (int i = 0; i < l; i++)
-    {
-        if(s1[i] == s2[i])
-        {
-            f++;
-
-        }
-        else
-            s++;
-    }
-    ofstream st2;
-    st2.open("GENERAL_CORRECT.txt");
-    st2<<f<<endl;
-    st2<<s;
-
-    return f;             // number of correct options would be return
-    st2.close();
-}
-
-
 void bsexamination() {
     string k;
-    cout << "\t\t\t\t\t" <<"-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
+    cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
     cout << "PLEASE ENTER YOUR ROLL NUMBER ";
     getline(cin, w);
-//    getline(cin, w);
+    getline(cin, w);
     ifstream rollnum;   // making object of rollnum
     rollnum.open("rollno.txt"); // opening of file rollno.txt where our roll numbers are
     string stored;    //
@@ -716,7 +760,7 @@ void bsexamination() {
         if (replaced == w)  // if replaced is equal to roll no student have entered
         {
 //                                cout<<"hello replace";
-            cout<<w;
+
             int h = 5;       //
             rollnumber(h);// then simple call roll number function
             break;
@@ -728,7 +772,7 @@ void msexamination()
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
     cout << "PLEASE ENTER YOUR ROLL NUMBER ";
     getline(cin,w);
-//    getline(cin,w);
+    getline(cin,w);
 
     ifstream rollnum;                             // making roll num object
     rollnum.open("MSROLLNO.txt");   // opening of MSROLLNO file to get roll numbers of student
@@ -915,7 +959,29 @@ void rollnumber(int n)   // defining roll number function
     studentShowOptions();
 
 }
+int compareFunction(std::string s1, std::string s2,int l)
 
+{
+    int f = 0;
+    int s = 0;
+    for (int i = 0; i < l; i++)
+    {
+        if(s1[i] == s2[i])
+        {
+            f++;
+
+        }
+        else
+            s++;
+    }
+    ofstream st2;
+    st2.open("GENERAL_CORRECT.txt");
+    st2<<f<<endl;
+    st2<<s;
+
+    st2.close();
+    return f;             // number of correct options would be return
+}
 void MS(int n)
 { char x;
     int g = 5;
@@ -1433,9 +1499,16 @@ void PHD_MERIT()
 }
 
 
+void programDetails()
+{
+    int department ;
+    cout << " \t\t\tCHOOSE ONE DEPARTMENT FOR ITS INFORMATION:"<<endl;
+    cout << " \t\t\t\t: Departments  are :"<< "\n"<<"1.\"BS\" \n"<<"2.\"MS\" \n";
+    cout<<"3.\"PHD\" \n";
+    cout<<"\t\t\t:ENTER DEPARTMENT NUMBER HERE: ";
+    cin>>department;
+    switch (department) {
 
-<<<<<<< HEAD
-=======
         case 1:
             first_bs();
             break;
