@@ -23,7 +23,6 @@ void examFunction();
 void aggregateFunction();
 void resultFunction();
 void meritListFunction();
-void programDetails();
 //TEACHER FUNCTIONS:
 void teacherLogin();
 void teacherLoginLoop ();
@@ -49,7 +48,7 @@ void removeTeachers();
 void seperationFunction();
 
 
-int compareFunction(string s1, string s2,int l);
+int compareFunction(std::string s1, std::string s2,int l);
 void PHD(int n);
 void MS(int n);
 void rollnumber(int n);
@@ -62,23 +61,3 @@ void PHD_RESULT_CHECK();
 void BS_MERIT();
 void MS_MERIT();
 void PHD_MERIT();
-
-
-void first_phd();
-void first_ms();
-void first_bs();
-
-
-/////////////////////////////////////////////
-void bsKEY();
-void msKEY();
-void phdKEY();
-
-void editExistingDataMS(int num, char data);
-void editExistingDataBS(int num, char data);
-void editExistingDataPHD(int num, char data);
-
-////////////////////////////////////////////////
-void showBS();
-void showMS();
-void showPHD();
