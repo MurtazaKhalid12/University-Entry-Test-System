@@ -66,7 +66,7 @@ void studentShowOptions()
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
     cout<<"\n\t\t\t\t\t2)Calculate Aggregate";
-    cout<<"\n\t\t\t\t\t3)Checking Admission Status\n\t\t\t\t\t4)View Merit Lists";
+    cout<<"\n\t\t\t\t\t3)Check Result of Test\n\t\t\t\t\t4)View Merit Lists";
     cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
     studentOptionSelect();
 }
@@ -78,13 +78,13 @@ void studentOptionSelect() //student selects options.
     cin.ignore();
     switch (option) {
         case 1:
-            cout<<"\n\n\t\t\t\t\tGet ready to suffer\n";
+            cout<<"\n\n\t\t\t\t\t(EXAM FUNCTION LOADING)\n";
             examFunction();
             seperationFunction();
             studentShowOptions();
             break;
         case 2:
-            cout<<"\n\n\t\t\t\t\tYou are already dead\n";
+            cout<<"\n\n\t\t\t\t\t(AGGREGATE FUNCTION LOADING)\n";
             aggregateFunction();
             seperationFunction();
             studentShowOptions();
@@ -96,7 +96,7 @@ void studentOptionSelect() //student selects options.
             studentShowOptions();
             break;
         case 4:
-            cout<<"\n\n\t\t\t\t\tMerit list function, the joke here is your meritXD\n";
+            cout<<"\n\n\t\t\t\t\t(MERIT LIST FUNCTION IS LOADING)\n";
             meritListFunction();
             seperationFunction();
             studentShowOptions();
@@ -673,7 +673,7 @@ void seperationFunction() //we create separation between the functions
 }
 
 
-int compareFunction(std::string s1, std::string s2,int l)
+int compareFunction(string s1, string s2,int l)
 
 {
     int f = 0;
@@ -703,6 +703,7 @@ void bsexamination() {
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
     cout << "PLEASE ENTER YOUR ROLL NUMBER ";
     getline(cin, w);
+//    getline(cin, w);
     ifstream rollnum;   // making object of rollnum
     rollnum.open("rollno.txt"); // opening of file rollno.txt where our roll numbers are
     string stored;    //
@@ -819,7 +820,7 @@ void rollnumber(int n)   // defining roll number function
         st1[cn]=option;   // storing string option
         cn++;
     }
-    cout<<st1[4];
+//    cout<<st1[4];
 
     c = compareFunction(st1,st2,cn); // givining our two strings to compare function along with number of mcqs which is cn
 
@@ -914,6 +915,7 @@ void rollnumber(int n)   // defining roll number function
     studentShowOptions();
 
 }
+
 void MS(int n)
 { char x;
     int g = 5;
@@ -959,7 +961,7 @@ void MS(int n)
     correct.open("MSKEY.txt");// correct opion file opening
     char option[1000];
     string st1;
-    int cn = 0;
+    double cn = 0;
     while (!correct.eof())  // running file till end
     {
         correct.getline(option,1000);
