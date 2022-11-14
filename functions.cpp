@@ -182,6 +182,7 @@ void adminShowOptions()
     cout<<"\n\t\t\t\t\t2)Add Teacher";
     cout<<"\n\t\t\t\t\t3)Add Admin\n\t\t\t\t\t4)Remove Students";
     cout<<"\n\t\t\t\t\t5)Remove Teachers";
+    cout<<"\n\t\t\t\t\t6)Change Student Password";
     cout<<"\n\t\t\t\t\t6)Back to MODE SELECTION";
     cout<<"\n\t\t\t\t\tYour input here: ";
     adminOptionSelect();
@@ -223,6 +224,12 @@ void adminOptionSelect()
             adminShowOptions();
             break;
         case 6:
+            cout<<"\n\n\t\t\t\t\t(Change A STUDENT forgotten Password)\n";
+            change();
+            seperationFunction();
+            adminShowOptions();
+            break;
+        case 7:
             cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
             seperationFunction();
             break;
@@ -726,8 +733,37 @@ void removeTeachers() {
     rename("temp.txt", "loginteachers.txt");
     cout<<"\n\n\t\t\t\t\t(DELETION SUCCESSFUL)\n\n";
 }
+void change()
+{
+    string strReplace, strNew;
+    cout << "Enter your old password \n";
+    cin >> strReplace;
+    cout << "Enter your new password \n ";
+    cin >> strNew;
+    ifstream orig("loginstudents.txt");
+    ofstream temp("temp.txt");
+    if (!orig || !temp)
+    {
+        cout << "Error opening files!" << endl;
+    }
 
+    string strTemp;
+    while (orig >> strTemp)
+    {
+        if (strTemp == strReplace)
+        {
+            strTemp = strNew;
+        }
+        strTemp += "\n";
+        temp << strTemp;
 
+    }
+    orig.close();
+    temp.close();
+    remove("loginstudents,txt");
+    rename("temp.txt", "loginstudents.txt");
+    cout<<"\n\n\t\t\t\t\t(PASSWORD CHANGED)";
+}
 ////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -742,6 +778,11 @@ void seperationFunction() //we create separation between the functions
     }
     cout<<"\n\n";
 }
+
+
+
+///////////////////////////////
+//smaller functions defined below
 void bsexamination() {
     string k;
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
@@ -2109,3 +2150,4 @@ void showPHD()
     }
     new_file.close();
 }
+
