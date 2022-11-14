@@ -885,7 +885,7 @@ void rollnumber(int n)   // defining roll number function
     studentShowOptions();
 
 }
-int compareFunction(string s1, string s2,int l)
+int compareFunction(std::string s1, std::string s2,int l)
 
 {
     int f = 0;
