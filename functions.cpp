@@ -676,6 +676,7 @@ void bsexamination() {
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
     cout << "PLEASE ENTER YOUR ROLL NUMBER ";
     getline(cin, w);
+    getline(cin, w);
     ifstream rollnum;   // making object of rollnum
     rollnum.open("rollno.txt"); // opening of file rollno.txt where our roll numbers are
     string stored;    //
@@ -907,8 +908,8 @@ int compareFunction(std::string s1, std::string s2,int l)
     st2<<f<<endl;
     st2<<s;
 
-    return f;             // number of correct options would be return
     st2.close();
+    return f;             // number of correct options would be return
 }
 void MS(int n)
 { char x;
