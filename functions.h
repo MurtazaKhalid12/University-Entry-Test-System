@@ -63,6 +63,7 @@ void BS_MERIT();
 void MS_MERIT();
 void PHD_MERIT();
 
+<<<<<<< Updated upstream
 
 void first_phd();
 void first_ms();
@@ -82,3 +83,21 @@ void editExistingDataPHD(int num, char data);
 void showBS();
 void showMS();
 void showPHD();
+=======
+programDetails();
+showBS();
+showMS();
+showPHD();
+bsKEY();
+msKEY();
+phdKEY();
+first_bs();
+first_ms();
+first_phd();
+editExistingDataBS(int num, char data);
+editExistingDataMS(int num, char data);
+editExistingDataPHD(int num, char data);
+
+
+
+>>>>>>> Stashed changes

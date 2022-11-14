@@ -239,42 +239,42 @@ void adminOptionSelect()
 //STUDENT FUNCTIONS:
 void studentLogin()
 {
-        int count;
-        char loginroll[20], loginpass[20], rollnum[20], pass[20];
+    int count;
+    char loginroll[20], loginpass[20], rollnum[20], pass[20];
 
-        cout << "\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
-        cin >> loginroll;
-        cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
-        cin >> loginpass;
-        ifstream input("loginstudents.txt");
-        while (input >> rollnum >> pass)
+    cout << "\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
+    cin >> loginroll;
+    cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin >> loginpass;
+    ifstream input("loginstudents.txt");
+    while (input >> rollnum >> pass)
+    {
+        if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
         {
-            if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
-            {
-                count=1;
-            }
+            count=1;
         }
-        if (count==1)
-        {
-            cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
-            studentFunction(2);
+    }
+    if (count==1)
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
+        studentFunction(2);
 
-        }
-        else
-        {
-            cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
-            studentLoginLoop();
+    }
+    else
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
+        studentLoginLoop();
 
-        }
+    }
 
-        input.close();
+    input.close();
 }
 void studentLoginLoop ()
 {
-   cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
-   cout<<"\n\n\t\t\t\t\t1)RETRY";
-   cout<<"\n\n\t\t\t\t\tYour input here: ";
-   int selection; cin>>selection;
+    cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+    cout<<"\n\n\t\t\t\t\t1)RETRY";
+    cout<<"\n\n\t\t\t\t\tYour input here: ";
+    int selection; cin>>selection;
     switch (selection) {
         case 0:
             studentFunction(0);
@@ -351,33 +351,33 @@ void aggregateFunction()
 
 void resultFunction()
 {
-        int p;
-        cout<<"ENTER 1 FOR BS\n";
-        cout<<"ENTER 2 FOR MS\n";
-        cout<<"ENTER 3 FOR PHD\n";
-        cout<<"ENTER 4 TO MAIN PROGRAM\n";
-        cin>>p;
-        switch (p)
-        {
-            case 1:
-                BS_RESULT_CHECK();
-                break;
-            case 2:
-                MS_RESULT_CHECK();
-                break;
-            case 3:
-                PHD_RESULT_CHECK();
-                break;
-            case 4:
-                cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
-                seperationFunction();
-                break;
-            default:
-                seperationFunction();
-                cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-                studentOptionSelect();
-                break;
-        }
+    int p;
+    cout<<"ENTER 1 FOR BS\n";
+    cout<<"ENTER 2 FOR MS\n";
+    cout<<"ENTER 3 FOR PHD\n";
+    cout<<"ENTER 4 TO MAIN PROGRAM\n";
+    cin>>p;
+    switch (p)
+    {
+        case 1:
+            BS_RESULT_CHECK();
+            break;
+        case 2:
+            MS_RESULT_CHECK();
+            break;
+        case 3:
+            PHD_RESULT_CHECK();
+            break;
+        case 4:
+            cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
+            break;
+        default:
+            seperationFunction();
+            cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
+            studentOptionSelect();
+            break;
+    }
 }
 void meritListFunction() {
     int num;
@@ -2112,4 +2112,8 @@ void showPHD()
         cout << ch <<endl;
     }
     new_file.close();
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
