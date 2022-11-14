@@ -137,7 +137,7 @@ void teacherOptionSelect()   //teacher options select
     cin.ignore();
     switch (option) {
         case 1:
-            cout<<"\n\n\t\t\t\t\t(Take a look at the entry test.)\n";
+            cout<<"\n\n\t\t\t\t\t(Take a look at the entry test)\n";
             checkEntryTest();
             seperationFunction();
             teacherShowOptions();
