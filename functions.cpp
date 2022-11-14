@@ -239,42 +239,42 @@ void adminOptionSelect()
 //STUDENT FUNCTIONS:
 void studentLogin()
 {
-        int count;
-        char loginroll[20], loginpass[20], rollnum[20], pass[20];
+    int count;
+    char loginroll[20], loginpass[20], rollnum[20], pass[20];
 
-        cout << "\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
-        cin >> loginroll;
-        cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
-        cin >> loginpass;
-        ifstream input("loginstudents.txt");
-        while (input >> rollnum >> pass)
+    cout << "\n\n\t\t\t\t\tENTER YOUR ROLL NUMBER: ";
+    cin >> loginroll;
+    cout << "\n\n\t\t\t\t\tENTER YOUR PASSWORD: ";
+    cin >> loginpass;
+    ifstream input("loginstudents.txt");
+    while (input >> rollnum >> pass)
+    {
+        if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
         {
-            if(strcmp(loginroll,rollnum)==0 && strcmp(loginpass,pass)==0)
-            {
-                count=1;
-            }
+            count=1;
         }
-        if (count==1)
-        {
-            cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
-            studentFunction(2);
+    }
+    if (count==1)
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN SUCCESSFUL)\n\n";
+        studentFunction(2);
 
-        }
-        else
-        {
-            cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
-            studentLoginLoop();
+    }
+    else
+    {
+        cout<<"\n\n\t\t\t\t\t(LOGIN ERROR)\n\n";
+        studentLoginLoop();
 
-        }
+    }
 
-        input.close();
+    input.close();
 }
 void studentLoginLoop ()
 {
-   cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
-   cout<<"\n\n\t\t\t\t\t1)RETRY";
-   cout<<"\n\n\t\t\t\t\tYour input here: ";
-   int selection; cin>>selection;
+    cout<<"\n\n\t\t\t\t\t0)MODE SELECTION";
+    cout<<"\n\n\t\t\t\t\t1)RETRY";
+    cout<<"\n\n\t\t\t\t\tYour input here: ";
+    int selection; cin>>selection;
     switch (selection) {
         case 0:
             studentFunction(0);
@@ -351,33 +351,33 @@ void aggregateFunction()
 
 void resultFunction()
 {
-        int p;
-        cout<<"ENTER 1 FOR BS\n";
-        cout<<"ENTER 2 FOR MS\n";
-        cout<<"ENTER 3 FOR PHD\n";
-        cout<<"ENTER 4 TO MAIN PROGRAM\n";
-        cin>>p;
-        switch (p)
-        {
-            case 1:
-                BS_RESULT_CHECK();
-                break;
-            case 2:
-                MS_RESULT_CHECK();
-                break;
-            case 3:
-                PHD_RESULT_CHECK();
-                break;
-            case 4:
-                cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
-                seperationFunction();
-                break;
-            default:
-                seperationFunction();
-                cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
-                studentOptionSelect();
-                break;
-        }
+    int p;
+    cout<<"ENTER 1 FOR BS\n";
+    cout<<"ENTER 2 FOR MS\n";
+    cout<<"ENTER 3 FOR PHD\n";
+    cout<<"ENTER 4 TO MAIN PROGRAM\n";
+    cin>>p;
+    switch (p)
+    {
+        case 1:
+            BS_RESULT_CHECK();
+            break;
+        case 2:
+            MS_RESULT_CHECK();
+            break;
+        case 3:
+            PHD_RESULT_CHECK();
+            break;
+        case 4:
+            cout<<"\n\n\t\t\t\t\tThank you for your time\n\n";
+            seperationFunction();
+            break;
+        default:
+            seperationFunction();
+            cout<<"\n\n\t\t\t\t\tEnter a valid option next time";
+            studentOptionSelect();
+            break;
+    }
 }
 void meritListFunction() {
     int num;
@@ -747,7 +747,6 @@ void bsexamination() {
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
     cout << "PLEASE ENTER YOUR ROLL NUMBER ";
     getline(cin, w);
-    getline(cin, w);
     ifstream rollnum;   // making object of rollnum
     rollnum.open("rollno.txt"); // opening of file rollno.txt where our roll numbers are
     string stored;    //
@@ -771,7 +770,6 @@ void msexamination()
 {
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
     cout << "PLEASE ENTER YOUR ROLL NUMBER ";
-    getline(cin,w);
     getline(cin,w);
 
     ifstream rollnum;                             // making roll num object
@@ -845,26 +843,24 @@ void rollnumber(int n)   // defining roll number function
     screen.open("BS_I_FILL.txt");
     string str;
     string st2;
-    while (!screen.eof())
+    while (getline(screen,str))
     {
 
-        getline(screen,str);
+
         st2+=str;
 
     }
 
     ifstream correct;
     correct.open("BSKEY.txt");// correct opion file opening
-    char option;
+    string option;
     string st1;
     double cn = 0;
-    while (!correct.eof())  // running file till end
+    while (getline(correct,option))  // running file till end
     {
-        correct.get(option);
-        st1[cn]=option;   // storing string option
+        st1+=option;   // storing string option
         cn++;
     }
-    cout<<st1[4];
 
     c = compareFunction(st1,st2,cn); // givining our two strings to compare function along with number of mcqs which is cn
 
@@ -959,7 +955,7 @@ void rollnumber(int n)   // defining roll number function
     studentShowOptions();
 
 }
-int compareFunction(std::string s1, std::string s2,int l)
+int compareFunction(string s1,string s2,int l)
 
 {
     int f = 0;
@@ -1014,10 +1010,9 @@ void MS(int n)
     screen.open("MS_I_FILL.txt");
     string str;
     string st2;
-    while (!screen.eof())
+    while (getline(screen,str))
     {
 
-        getline(screen,str);
         st2+=str;
 
 
@@ -1025,12 +1020,11 @@ void MS(int n)
 
     ifstream correct;
     correct.open("MSKEY.txt");// correct opion file opening
-    char option[1000];
+    string option;
     string st1;
-    int cn = 0;
-    while (!correct.eof())  // running file till end
+    double cn = 0;
+    while (getline(correct,option))  // running file till end
     {
-        correct.getline(option,1000);
         st1+=option;   // storing string option
         cn++;
     }
@@ -1155,14 +1149,15 @@ void PHD(int n)
         // n+=10;
 
     }
+    abj.close();
+    abi.close();
     ifstream screen;
     screen.open("PHD_I_FILL.txt");
     string str;
     string st2;
-    while (!screen.eof())
+    while (getline(screen,str))
     {
 
-        getline(screen,str);
         st2+=str;
 
 
@@ -1170,12 +1165,11 @@ void PHD(int n)
 
     ifstream correct;
     correct.open("PHDKEY.txt");// correct opion file opening
-    char option[1000];
+    string option;
     string st1;
-    int cn = 0;
-    while (!correct.eof())  // running file till end
+    double cn = 0;
+    while (getline(correct,option))  // running file till end
     {
-        correct.getline(option,1000);
         st1+=option;   // storing string option
         cn++;
     }
@@ -1199,6 +1193,7 @@ void PHD(int n)
     string otherstuffs1 = " YOU ARE ALSO ELIGIBLE FOR AI,MT CONTACY WITH UNIVERSITY BEST OF LUCK ";
     string otherstuff2 = " YOU ARE ALSO ELIGIBLE FOR MT,NANOTECH CONTACT WITH UNIVERSITY BEST OF LUCK ";
     string otherstuff3 = "YOU MARKS ARE LOW SO YOU ARE ON WAITING LIST";
+//    string otherstuff4
 
     ofstream marit;
 
@@ -1227,12 +1222,13 @@ void PHD(int n)
         sum = w+congratulations+departmentmanagmenttechnology;
         marit<<sum<<endl;
     }
-    if(c=0&&c<30)
+    if(m>=0&&m<30)
     {
-
+        sum = w+otherstuff3;
+        marit<<sum<<endl;
     }
 
-    if(c==0)
+    if(m==0)
     {
         cout<<"YOU HAVE NOT SELECTED";
         sum = w+" YOU HAVE NOT SELECTED TRY NEXT TIME BEST OF LUCK!";
@@ -1244,8 +1240,8 @@ void PHD(int n)
 
     output.close();
     correct.close();
-    abj.close();
-    abi.close();
+//    abj.close();
+//    abi.close();
 
     ifstream off;
     off.open("GENERAL_CORRECT.txt");
