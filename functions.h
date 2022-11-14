@@ -48,7 +48,7 @@ void removeTeachers();
 void seperationFunction();
 
 
-int compareFunction(std::string s1, std::string s2,int l);
+int compareFunction(string s1, string s2,int l);
 void PHD(int n);
 void MS(int n);
 void rollnumber(int n);
