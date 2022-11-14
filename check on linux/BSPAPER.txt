@@ -1,0 +1,31 @@
+In a group of 6 boys and 4 girls, four children are to be selected. In how many different ways can they be
+a) 205
+b) 209
+c) 159
+d)123
+A speaks truth in 75% of cases and B in 80% of cases. In what percentage of cases are they likely to
+a) 30%
+b) 35%
+c) 40%
+d) 45%
+The maximum value of 6 sin(x) cos(x) is
+a) 0
+b) 1
+c) 2.6
+d) 3
+In a group of 6 boys and 4 girls, four children are to be selected. In how many different ways can they be
+a) 205
+b) 209
+c) 159
+d)123
+A speaks truth in 75% of cases and B in 80% of cases. In what percentage of cases are they likely to
+a) 30%
+b) 35%
+c) 40%
+d) 45%
+The maximum value of 6 sin(x) cos(x) is
+a) 0
+b) 1
+c) 2.6
+d) 3
+

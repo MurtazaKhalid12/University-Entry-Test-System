@@ -671,6 +671,33 @@ void seperationFunction() //we create separation between the functions
     }
     cout<<"\n\n";
 }
+
+
+int compareFunction(std::string s1, std::string s2,int l)
+
+{
+    int f = 0;
+    int s = 0;
+    for (int i = 0; i < l; i++)
+    {
+        if(s1[i] == s2[i])
+        {
+            f++;
+
+        }
+        else
+            s++;
+    }
+    ofstream st2;
+    st2.open("GENERAL_CORRECT.txt");
+    st2<<f<<endl;
+    st2<<s;
+
+    return f;             // number of correct options would be return
+    st2.close();
+}
+
+
 void bsexamination() {
     string k;
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
@@ -688,7 +715,7 @@ void bsexamination() {
         if (replaced == w)  // if replaced is equal to roll no student have entered
         {
 //                                cout<<"hello replace";
-
+            cout<<w;
             int h = 5;       //
             rollnumber(h);// then simple call roll number function
             break;
@@ -700,7 +727,7 @@ void msexamination()
     cout << "\t\t\t\t\t" << "-------" << "ONLINE EXAMINATION SYSTEM" << "-----------\n";
     cout << "PLEASE ENTER YOUR ROLL NUMBER ";
     getline(cin,w);
-    getline(cin,w);
+//    getline(cin,w);
 
     ifstream rollnum;                             // making roll num object
     rollnum.open("MSROLLNO.txt");   // opening of MSROLLNO file to get roll numbers of student
@@ -886,29 +913,6 @@ void rollnumber(int n)   // defining roll number function
 
     studentShowOptions();
 
-}
-int compareFunction(std::string s1, std::string s2,int l)
-
-{
-    int f = 0;
-    int s = 0;
-    for (int i = 0; i < l; i++)
-    {
-        if(s1[i] == s2[i])
-        {
-            f++;
-
-        }
-        else
-            s++;
-    }
-    ofstream st2;
-    st2.open("GENERAL_CORRECT.txt");
-    st2<<f<<endl;
-    st2<<s;
-
-    return f;             // number of correct options would be return
-    st2.close();
 }
 void MS(int n)
 { char x;
