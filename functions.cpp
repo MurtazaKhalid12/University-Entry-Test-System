@@ -66,7 +66,7 @@ void studentShowOptions()
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)MCQs type Exam";
     cout<<"\n\t\t\t\t\t2)Calculate Aggregate";
-    cout<<"\n\t\t\t\t\t3)Checking Admission Status\n\t\t\t\t\t4)View Merit Lists";
+    cout<<"\n\t\t\t\t\t3)Check Result of Test\n\t\t\t\t\t4)View Merit Lists";
     cout<<"\n\t\t\t\t\t5)Back to MODE SELECTION\n\t\t\t\t\tYour input here: ";
     studentOptionSelect();
 }
@@ -78,13 +78,13 @@ void studentOptionSelect() //student selects options.
     cin.ignore();
     switch (option) {
         case 1:
-            cout<<"\n\n\t\t\t\t\tGet ready to suffer\n";
+            cout<<"\n\n\t\t\t\t\t(EXAM FUNCTION LOADING)\n";
             examFunction();
             seperationFunction();
             studentShowOptions();
             break;
         case 2:
-            cout<<"\n\n\t\t\t\t\tYou are already dead\n";
+            cout<<"\n\n\t\t\t\t\t(AGGREGATE FUNCTION LOADING)\n";
             aggregateFunction();
             seperationFunction();
             studentShowOptions();
@@ -96,7 +96,7 @@ void studentOptionSelect() //student selects options.
             studentShowOptions();
             break;
         case 4:
-            cout<<"\n\n\t\t\t\t\tMerit list function, the joke here is your meritXD\n";
+            cout<<"\n\n\t\t\t\t\t(MERIT LIST FUNCTION IS LOADING)\n";
             meritListFunction();
             seperationFunction();
             studentShowOptions();
