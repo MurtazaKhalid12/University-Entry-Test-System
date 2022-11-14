@@ -125,7 +125,7 @@ void teacherShowOptions ()
     cout<<"\n\n\n\t\t\t\t\tHere are your options: ";
     cout<<"\n\n\t\t\t\t\tPlease ENTER:\n\t\t\t\t\t1)Checking admission test";
     cout<<"\n\t\t\t\t\t2)Make MCQs for Paper";
-    cout<<"\n\t\t\t\t\t3)EDIT MCQs\n\t\t\t\t\t4)GENERATE Merit Lists";
+    cout<<"\n\t\t\t\t\t3)EDIT MCQ key\n\t\t\t\t\t4)GENERATE Merit Lists";
     cout<<"\n\t\t\t\t\t5)MANIPULATE student marks";
     cout<<"\n\t\t\t\t\t6)BACK TO MODE SELECTION\n\t\t\t\t\tYour input here: ";
     teacherOptionSelect();
@@ -144,19 +144,19 @@ void teacherOptionSelect()   //teacher options select
             teacherShowOptions();
             break;
         case 2:
-            cout<<"\n\n\t\t\t\t\tEdit the question statement here\n";
+            cout<<"\n\n\t\t\t\t\t(MAKE MCQS FOR PAPER HERE)\n";
             makeMCQs();
             seperationFunction();
             teacherShowOptions();
             break;
         case 3:
-            cout<<"\n\n\t\t\t\t\tEdit MCQs and correct option SIRRRRRRR\n";
+            cout<<"\n\n\t\t\t\t\t(EDIT MCQS KEY HERE)\n";
             editMCQs();
             seperationFunction();
             teacherShowOptions();
             break;
         case 4:
-            cout<<"\n\n\t\t\t\t\tGenerate merit list from marks sheet\n";
+            cout<<"\n\n\t\t\t\t\t(GENERATE MANUAL MERIT LIST)\n";
             generateMeritList();
             seperationFunction();
             teacherShowOptions();
@@ -503,11 +503,58 @@ void makeMCQs()
 }
 void editMCQs()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    int x;
+    cout<<"\n\n\t\t\t\t\tEnter 1 for editing BS KEY";
+    cout<<"\n\n\t\t\t\t\tEnter 2 for editing MS KEY";
+    cout<<"\n\n\t\t\t\t\tEnter 3 for editing PHD KEY";
+    cin>>x;
+    switch (x)
+    {
+        case 1:
+            bsKEY();
+            break;
+        case 2:
+            msKEY();
+            break;
+        case 3:
+            phdKEY();
+            break;
+        default:
+            cout<<"\n\n\t\t\t\t\tPlease enter valid choice next time";
+    }
 }
 void generateMeritList()
 {
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
+    char t;
+    do
+    {
+        string st2;
+        string st1;
+        cout<<"\t\t\t\t"<<"FORMAT(BSPROGRAM/MSPROGRAM/PHDPROGRAM)\n";
+        cout<<"\t\t\t\tENTER THE PROGRAM YOU WANT TO SELECT THEM FOR: ";
+        cin>>st1;
+        cout<<endl;
+        int x;
+        cout<<"ENTER THE NUMBER OF STUDENTS : ";
+        cin>>x;
+        cout<<endl;
+        cout<<"\t\t\t"<<"FORMAT(2201 YOU HAVE BEEN SELECTED IN COMPUTER ENGINEERING)"<<endl;
+        ofstream make;
+        make.open(st1+".txt",ios::app);
+        getline(cin,st2);
+        for(int i = 1;i<=x;i++)
+        {
+            cout<<"ENTER STUDENT "<<i<<" MERIT : " ;
+            getline(cin,st2);
+
+            make<<st2<<endl;
+        }
+        make.close();
+        cout<<"ENTER Y FOR REUSING\n";
+        int t;
+        cin>>t;
+    }
+    while(t=='y'||t=='Y');
 
 }
 void manipulateMarks()
@@ -1848,4 +1895,165 @@ void first_phd()
                 }}
         }
     }
+}
+
+void bsKEY()
+{
+    ifstream file;
+    file.open("BSKEY.txt", ios::in);
+    char str;
+    while (file >> str) {
+        cout << str << " ";
+        // count++;
+    }
+    char data;
+    int num;
+    cout << endl << "Enter the line number you want to change: ";
+    cin >> num;
+    cout << "Enter the data you want to enter: ";
+    cin >> data;
+    editExistingDataBS(num,data);
+    ifstream file1;
+    file1.open("BSKEY.txt", ios::in);
+    while (file1 >> str) {
+        cout << str << " ";
+        // count++;
+    }
+}
+void msKEY()
+{
+    ifstream file;
+    file.open("MSKEY.txt", ios::in);
+    char str;
+    while (file >> str) {
+        cout << str << " ";
+        // count++;
+    }
+    char data;
+    int num;
+    cout << endl << "Enter the line number you want to change: ";
+    cin >> num;
+    cout << "Enter the data you want to enter: ";
+    cin >> data;
+    editExistingDataMS(num,data);
+    ifstream file1;
+    file1.open("MSKEY.txt", ios::in);
+    while (file1 >> str) {
+        cout << str << " ";
+        // count++;
+    }
+}
+void phdKEY()
+{
+    ifstream file;
+    file.open("PHDKEY.txt", ios::in);
+    char str;
+    while (file >> str) {
+        cout << str << " ";
+        // count++;
+    }
+    char data;
+    int num;
+    cout << endl << "Enter the line number you want to change: ";
+    cin >> num;
+    cout << "Enter the data you want to enter: ";
+    cin >> data;
+    editExistingDataPHD(num,data);
+    ifstream file1;
+    file1.open("PHDKEY.txt", ios::in);
+    while (file1 >> str) {
+        cout << str << " ";
+        // count++;
+    }
+}
+
+void editExistingDataBS(int num, char data)
+{
+    int count =0;
+    ifstream file;
+    file.open("BSKEY.txt", ios::in);
+    char str;
+    while (file >> str) {
+        // cout << str << endl;
+        count++;
+    }
+    if (num >= count) {
+        cout << "Out of Bounds \n";
+        return;
+    }
+    // cout << count;
+    file.close();
+    file.open("BSKEY.txt",ios::in);
+    char arr[count];
+    for (int i = 0;!file.eof() && i < count; i++) {
+        file >> arr[i];
+    }
+    file.close();
+    arr[num-1] = data;
+    ofstream out;
+    out.open("BSKEY.txt");
+    for(int i = 0;i < count; i++) {
+        out << arr[i] << endl;
+    }
+    out.close();
+}
+void editExistingDataMS(int num, char data)
+{
+    int count =0;
+    ifstream file;
+    file.open("MSKEY.txt", ios::in);
+    char str;
+    while (file >> str) {
+        // cout << str << endl;
+        count++;
+    }
+    if (num >= count) {
+        cout << "Out of Bounds \n";
+        return;
+    }
+    // cout << count;
+    file.close();
+    file.open("MSKEY.txt",ios::in);
+    char arr[count];
+    for (int i = 0;!file.eof() && i < count; i++) {
+        file >> arr[i];
+    }
+    file.close();
+    arr[num-1] = data;
+    ofstream out;
+    out.open("MSKEY.txt");
+    for(int i = 0;i < count; i++) {
+        out << arr[i] << endl;
+    }
+    out.close();
+}
+void editExistingDataPHD(int num, char data)
+{
+    int count =0;
+    ifstream file;
+    file.open("PHDKEY.txt", ios::in);
+    char str;
+    while (file >> str) {
+        // cout << str << endl;
+        count++;
+    }
+    if (num >= count) {
+        cout << "Out of Bounds \n";
+        return;
+    }
+    // cout << count;
+    file.close();
+    file.open("PHDKEY.txt",ios::in);
+    char arr[count];
+    for (int i = 0;!file.eof() && i < count; i++) {
+        file >> arr[i];
+    }
+    file.close();
+    arr[num-1] = data;
+    ofstream out;
+    out.open("PHDKEY.txt");
+    for(int i = 0;i < count; i++) {
+        out << arr[i] << endl;
+    }
+    out.close();
 }

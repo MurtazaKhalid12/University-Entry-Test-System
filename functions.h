@@ -67,3 +67,13 @@ void PHD_MERIT();
 void first_phd();
 void first_ms();
 void first_bs();
+
+
+/////////////////////////////////////////////
+void bsKEY();
+void msKEY();
+void phdKEY();
+
+void editExistingDataMS(int num, char data);
+void editExistingDataBS(int num, char data);
+void editExistingDataPHD(int num, char data);
