@@ -13,6 +13,8 @@ void optionShow();
 void optionSelect();
 using namespace std;
 
+double c;
+string w;
 int main ()
 {
     cout<<"\n\n\t\t\t\t\tWelcome to ITU entry test system in C++\n";
@@ -72,5 +74,5 @@ void optionSelect()
 }
 void loopProgram()
 {
-    cout<<main();
+    main();
 }

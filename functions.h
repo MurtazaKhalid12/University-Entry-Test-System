@@ -5,7 +5,10 @@
 #include <string>
 #include <stdlib.h>
 #include <sstream>
-
+using namespace std;
+extern double c;
+extern string w;
+extern char num;
 void studentFunction(int login);
 void teacherFunction(int login);
 void adminFunction(int login);
@@ -44,9 +47,7 @@ void removeTeachers();
 //Structure functions:
 void seperationFunction();
 
-extern double c;
-extern string w;
-extern char num;
+
 int compareFunction(std::string s1, std::string s2,int l);
 void PHD(int n);
 void MS(int n);

@@ -2,8 +2,11 @@
 #include "functions.h"
 #include<bits/stdc++.h>
 #include <fstream>
+#include <string>
 #include <cstring>
+
 using namespace std;
+
 void studentFunction(int login)
 {
     seperationFunction();
