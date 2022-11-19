@@ -944,7 +944,7 @@ void rollnumber(int n)   // defining roll number function
     {
 //        cout<<"YOU HAVE NOT SELECTED";
         sum = w+" YOU HAVE NOT SELECTED TRY NEXT TIME BEST OF LUCK!";
-        marit<<sum<<endl
+        marit<<sum<<endl;
     }
     marit.close();
 
