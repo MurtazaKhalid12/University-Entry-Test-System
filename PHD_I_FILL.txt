@@ -1,6 +1,6 @@
 a
 b
-d
-c
-s
-d
+l
+l
+l
+l

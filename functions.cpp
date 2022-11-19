@@ -582,10 +582,6 @@ void generateMeritList()
     while(t=='y'||t=='Y');
 
 }
-void manipulateMarks()
-{
-    cout<<"\n\n\t\t\t\t\tUnder progress\n\n";
-}
 //ADMIN FUNCTIONS:
 void adminLogin()
 {
@@ -884,7 +880,7 @@ void rollnumber(int n)   // defining roll number function
     screen.open("BS_I_FILL.txt");
     string str;
     string st2;
-    while (getline(screen,str))
+    while (screen>>str)
     {
 
 
@@ -897,7 +893,7 @@ void rollnumber(int n)   // defining roll number function
     string option;
     string st1;
     double cn = 0;
-    while (getline(correct,option))  // running file till end
+    while (correct>>option)  // running file till end
     {
         st1+=option;   // storing string option
         cn++;
@@ -942,11 +938,13 @@ void rollnumber(int n)   // defining roll number function
     if(k<30&&k>0)
     {
         sum = w+" YOUR MARKS ARE LOW YOU ARE ON WAITING LIST ";
+        marit<<sum<<endl;
     }
     if(k == 0)
     {
 //        cout<<"YOU HAVE NOT SELECTED";
         sum = w+" YOU HAVE NOT SELECTED TRY NEXT TIME BEST OF LUCK!";
+        marit<<sum<<endl
     }
     marit.close();
 
@@ -1051,7 +1049,7 @@ void MS(int n)
     screen.open("MS_I_FILL.txt");
     string str;
     string st2;
-    while (getline(screen,str))
+    while (screen>>str)
     {
 
         st2+=str;
@@ -1064,7 +1062,7 @@ void MS(int n)
     string option;
     string st1;
     double cn = 0;
-    while (getline(correct,option))  // running file till end
+    while (correct>>option)  // running file till end
     {
         st1+=option;   // storing string option
         cn++;
@@ -1110,10 +1108,11 @@ void MS(int n)
         marit<<sum<<endl;
     }
 
-    if(k==0)
+    if(k>30&&k>=0)
     {
         cout<<"YOU HAVE NOT SELECTED";
         sum = w+" YOU HAVE NOT SELECTED TRY NEXT TIME BEST OF LUCK!";
+        marit<<sum<<endl;
     }
     marit.close();
 
@@ -1196,7 +1195,7 @@ void PHD(int n)
     screen.open("PHD_I_FILL.txt");
     string str;
     string st2;
-    while (getline(screen,str))
+    while (screen>>str)
     {
 
         st2+=str;
@@ -1209,7 +1208,7 @@ void PHD(int n)
     string option;
     string st1;
     double cn = 0;
-    while (getline(correct,option))  // running file till end
+    while (correct>>option)  // running file till end
     {
         st1+=option;   // storing string option
         cn++;
@@ -2150,4 +2149,5 @@ void showPHD()
     }
     new_file.close();
 }
+
 
